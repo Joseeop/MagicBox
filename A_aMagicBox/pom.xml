@@ -4,4 +4,13 @@
   <artifactId>A_amagicBox</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>A_amagicBox</name>
+      <dependencies>
+  <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.28</version>
+</dependency>
+  
+  </dependencies>
 </project>
