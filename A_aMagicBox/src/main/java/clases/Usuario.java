@@ -30,7 +30,7 @@ public class Usuario extends ElementoConNombre {
 		Statement smtSelect = utils.ConexionBD.conectar();
 		 ResultSet cursor = smtSelect.executeQuery("select * from usuario where email='"+email+"';");
 		 if (cursor.next()) { //Lo hacemos con un if ya que el email será clave primaria.
-			 	//Habría que crear las tablas en BBDD para modificar los getters.
+			 	//Habría que crear las tablas en BBDD para saber qué poner dentro de los getters.
 				
 			 	this.email = email;
 			 	this.password = cursor.getString("pass");
