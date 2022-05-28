@@ -2,33 +2,27 @@ package clases;
 
 import java.util.ArrayList;
 
-public class SeleccionCuidado {
+public class SeleccionCuidado extends ElementoConNombre{
 
-	//Plural o singular?
-	private ArrayList<Cuidados> cuidados;
 
-	//Constructor
-	public SeleccionCuidado(ArrayList<Cuidados> cuidados) {
-		super();
-		this.cuidados = cuidados;
-	
-	}
-	
-	//Getters AND Setters
+	private ArrayList<Cuidados>cuidado;
 
-	public ArrayList<Cuidados> getCuidados() {
-		return cuidados;
+	public SeleccionCuidado(String nombre, ArrayList<Cuidados> cuidado) {
+		super(nombre);
+		this.cuidado = cuidado;
 	}
 
-	public void setCuidados(ArrayList<Cuidados> cuidados) {
-		this.cuidados = cuidados;
+	public ArrayList<Cuidados> getCuidado() {
+		return cuidado;
 	}
 
-	
-	//ToString
+	public void setCuidado(ArrayList<Cuidados> cuidado) {
+		this.cuidado = cuidado;
+	}
+
 	@Override
 	public String toString() {
-		return "SeleccionCuidado [cuidados=" + cuidados + "]";
+		return "SeleccionCuidado [cuidado=" + cuidado + "]";
 	}
 	
 	

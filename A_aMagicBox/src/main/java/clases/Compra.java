@@ -4,59 +4,57 @@ import java.time.LocalDateTime;
 
 public class Compra {
 	
-	private Cliente usuarios;
-	private LocalDateTime fechaCompra;
-	private float precioCompra;
+	private Usuario cliente;
+	private LocalDateTime fechaDeCompra;
+	private float precioDeCompra;
 	
 	
-	//Constructor
-	public Compra(Cliente usuarios, LocalDateTime fechaCompra, float precioCompra) {
+	public Compra(Usuario cliente, LocalDateTime fechaDeCompra, float precioDeCompra) {
 		super();
-		this.usuarios = usuarios;
-		this.fechaCompra = fechaCompra;
-		this.precioCompra = precioCompra;
+		this.cliente = cliente;
+		this.fechaDeCompra = fechaDeCompra;
+		this.precioDeCompra = precioDeCompra;
 	}
 
 
-	
-	//Getters AND Setters
-	public Cliente getUsuarios() {
-		return usuarios;
+	public Usuario getCliente() {
+		return cliente;
 	}
 
 
-	public void setUsuarios(Cliente usuarios) {
-		this.usuarios = usuarios;
+	public void setCliente(Usuario cliente) {
+		this.cliente = cliente;
 	}
 
 
-	public LocalDateTime getFechaCompra() {
-		return fechaCompra;
+	public LocalDateTime getFechaDeCompra() {
+		return fechaDeCompra;
 	}
 
 
-	public void setFechaCompra(LocalDateTime fechaCompra) {
-		this.fechaCompra = fechaCompra;
+	public void setFechaDeCompra(LocalDateTime fechaDeCompra) {
+		this.fechaDeCompra = fechaDeCompra;
 	}
 
 
-	public float getPrecioCompra() {
-		return precioCompra;
+	public float getPrecioDeCompra() {
+		return precioDeCompra;
 	}
 
 
-	public void setPrecioCompra(float precioCompra) {
-		this.precioCompra = precioCompra;
+	public void setPrecioDeCompra(float precioDeCompra) {
+		this.precioDeCompra = precioDeCompra;
 	}
 
-
-	
-	//ToString
 
 	@Override
 	public String toString() {
-		return "Compra [usuarios=" + usuarios + ", fechaCompra=" + fechaCompra + ", precioCompra=" + precioCompra + "]";
+		return "Compra [cliente=" + cliente + ", fechaDeCompra=" + fechaDeCompra + ", precioDeCompra=" + precioDeCompra
+				+ "]";
 	}
+	
+	
+	
 	
 	
 	

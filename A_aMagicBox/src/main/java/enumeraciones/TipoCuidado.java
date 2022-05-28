@@ -1,4 +1,4 @@
-package enums;
+package enumeraciones;
 
 public enum TipoCuidado {
 	

@@ -4,32 +4,28 @@ import java.util.ArrayList;
 
 public class SeleccionViaje extends ElementoConNombre {
 	
-	//Plural o singular?
-	private  ArrayList<Destinos> destinos;
-	
-	//Constructor
 
-	public SeleccionViaje(ArrayList<Destinos> destinos) {
-		super();
-		this.destinos = destinos;
-	}
+private ArrayList<Destinos>destino;
 
-	
-	//Getters AND Setters
-	public ArrayList<Destinos> getDestinos() {
-		return destinos;
-	}
+public SeleccionViaje(String nombre, ArrayList<Destinos> destino) {
+	super(nombre);
+	this.destino = destino;
+}
 
-	public void setDestinos(ArrayList<Destinos> destinos) {
-		this.destinos = destinos;
-	}
+public ArrayList<Destinos> getDestino() {
+	return destino;
+}
 
-	//ToString
-	@Override
-	public String toString() {
-		return "SeleccionViaje [destinos=" + destinos + "]";
-	}
-	
+public void setDestino(ArrayList<Destinos> destino) {
+	this.destino = destino;
+}
+
+@Override
+public String toString() {
+	return "SeleccionViaje [destino=" + destino + "]";
+}
+
+
 		
 	
 

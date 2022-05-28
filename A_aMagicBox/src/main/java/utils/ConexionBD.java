@@ -8,8 +8,8 @@ import java.sql.Statement;
 public class ConexionBD {
 	
 	
-		private final static String cadenaConexion = "jdbc:mysql://localhost/poo_bbdd";
-		private final static String usuarioBD = "joseop";
+		private final static String cadenaConexion = "jdbc:mysql://localhost/pruebas_mb";
+		private final static String usuarioBD = "root";
 		private final static String passwordBD = "admin";
 		private static Connection conexion; 
 

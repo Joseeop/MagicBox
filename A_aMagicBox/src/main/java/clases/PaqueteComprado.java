@@ -4,27 +4,25 @@ import java.time.LocalDateTime;
 
 public final class PaqueteComprado extends Compra{
 	
-	private Paquete paquete;
+
+	private Paquetes paquete;
 	private Actividad actividadElegida;
 	
 	
-	//Constructor
-	public PaqueteComprado(Cliente usuarios, LocalDateTime fechaCompra, float precioCompra, Paquete paquete,
+	public PaqueteComprado(Usuario cliente, LocalDateTime fechaDeCompra, float precioDeCompra, Paquetes paquete,
 			Actividad actividadElegida) {
-		super(usuarios, fechaCompra, precioCompra);
+		super(cliente, fechaDeCompra, precioDeCompra);
 		this.paquete = paquete;
 		this.actividadElegida = actividadElegida;
 	}
 
 
-	
-	//Getters AND Setters
-	public Paquete getPaquete() {
+	public Paquetes getPaquete() {
 		return paquete;
 	}
 
 
-	public void setPaquete(Paquete paquete) {
+	public void setPaquete(Paquetes paquete) {
 		this.paquete = paquete;
 	}
 
@@ -39,15 +37,10 @@ public final class PaqueteComprado extends Compra{
 	}
 
 
-
-	//ToString
 	@Override
 	public String toString() {
 		return "PaqueteComprado [paquete=" + paquete + ", actividadElegida=" + actividadElegida + "]";
 	}
-	
-	
-	
 	
 	
 
