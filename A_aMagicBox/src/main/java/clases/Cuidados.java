@@ -2,13 +2,21 @@ package clases;
 
 import java.awt.image.BufferedImage;
 
+import enumeraciones.TipoComida;
 import enumeraciones.TipoCuidado;
 
 public class Cuidados extends Actividad{
-
-	public Cuidados(String nombre, BufferedImage foto, String descripcion) {
+	private TipoCuidado tipoCuidado;
+	
+	public Cuidados(String nombre, BufferedImage foto, String descripcion,TipoCuidado tipoCuidado) {
 		super(nombre, foto, descripcion);
-		// TODO Auto-generated constructor stub
+	
+		this.tipoCuidado=tipoCuidado;
+	}
+
+	@Override
+	public String toString() {
+		return "Cuidados [tipoCuidado=" + tipoCuidado + "]";
 	}
 	
 	

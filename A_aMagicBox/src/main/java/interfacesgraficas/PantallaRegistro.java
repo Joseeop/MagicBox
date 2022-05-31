@@ -126,8 +126,17 @@ public class PantallaRegistro extends JPanel{
 			}
 		});
 		
+		JLabel labelNombre = new JLabel("Nombre");
+		GridBagConstraints gbc_labelNombre = new GridBagConstraints();
+		gbc_labelNombre.anchor = GridBagConstraints.EAST;
+		gbc_labelNombre.insets = new Insets(0, 0, 5, 5);
+		gbc_labelNombre.gridx = 1;
+		gbc_labelNombre.gridy = 5;
+		add(labelNombre, gbc_labelNombre);
+		
 		campoNombre = new JTextField();
 		GridBagConstraints gbc_campoNombre = new GridBagConstraints();
+		gbc_campoNombre.gridwidth = 2;
 		gbc_campoNombre.insets = new Insets(0, 0, 5, 5);
 		gbc_campoNombre.fill = GridBagConstraints.HORIZONTAL;
 		gbc_campoNombre.gridx = 2;
@@ -135,19 +144,12 @@ public class PantallaRegistro extends JPanel{
 		add(campoNombre, gbc_campoNombre);
 		campoNombre.setColumns(10);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel.gridx = 1;
-		gbc_lblNewLabel.gridy = 6;
-		add(lblNewLabel, gbc_lblNewLabel);
-		
 		JLabel labelApellido = new JLabel("Apellido");
 		GridBagConstraints gbc_labelApellido = new GridBagConstraints();
 		gbc_labelApellido.anchor = GridBagConstraints.EAST;
 		gbc_labelApellido.insets = new Insets(0, 0, 5, 5);
 		gbc_labelApellido.gridx = 1;
-		gbc_labelApellido.gridy = 8;
+		gbc_labelApellido.gridy = 6;
 		add(labelApellido, gbc_labelApellido);
 		
 		campoApellido = new JTextField();
@@ -156,7 +158,7 @@ public class PantallaRegistro extends JPanel{
 		gbc_campoApellido.insets = new Insets(0, 0, 5, 5);
 		gbc_campoApellido.fill = GridBagConstraints.HORIZONTAL;
 		gbc_campoApellido.gridx = 2;
-		gbc_campoApellido.gridy = 8;
+		gbc_campoApellido.gridy = 6;
 		add(campoApellido, gbc_campoApellido);
 		campoApellido.setColumns(10);
 		

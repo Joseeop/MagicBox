@@ -64,6 +64,15 @@ public class Ventana extends JFrame{
 	case "comida":
 		this.pantallaActual=new PantallaComida(this);
 		break;
+	case "cuidado":
+		this.pantallaActual=new PantallaCuidado(this);
+		break;
+	case "destino":
+		this.pantallaActual=new PantallaDestino(this);
+		break;
+	case "usuario":
+		this.pantallaActual=new PantallaUsuario(this);
+		break;
 	}
 	
 	

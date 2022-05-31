@@ -28,6 +28,9 @@ import enumeraciones.TipoComida;
 import excepciones.ContrasegnaIncorrectaException;
 import excepciones.UsuarioNoExisteException;
 import utils.ConexionBD;
+import javax.swing.JButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 
 public class PantallaComida extends JPanel {
@@ -43,7 +46,7 @@ public class PantallaComida extends JPanel {
 		gridBagLayout.rowWeights = new double[] { 1.0, 0.0, 1.0, 1.0, Double.MIN_VALUE };
 		setLayout(gridBagLayout);
 
-		JLabel lblNewLabel = new JLabel("Comidas");
+		JLabel lblNewLabel = new JLabel("COMIDAS");
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel.gridx = 2;
@@ -87,6 +90,7 @@ public class PantallaComida extends JPanel {
 						BufferedImage foto=ImageIO.read(file);
 						Comidas comida=new Comidas(nombreRes, foto, descripcion, tipoComida);
 						System.out.println(comida.toString());
+					
 						
 					} 
 				
@@ -110,6 +114,20 @@ public class PantallaComida extends JPanel {
 		gbc_seleccionComida.gridx = 1;
 		gbc_seleccionComida.gridy = 1;
 		panel.add(seleccionComida, gbc_seleccionComida);
+		
+		JButton botonAtras = new JButton("Atrás");
+		botonAtras.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ventana.irAPantalla("seleccion");
+			}
+		});
+		GridBagConstraints gbc_botonAtras = new GridBagConstraints();
+		gbc_botonAtras.gridx = 4;
+		gbc_botonAtras.gridy = 3;
+		add(botonAtras, gbc_botonAtras);
+		
+		
 	}
 
 }
