@@ -240,6 +240,16 @@ public class Usuario extends ElementoConNombre {
 		 return ret;
 	 }
 
+	public Pais getPais() {
+		return pais;
+	}
+
+
+	public void setPais(Pais pais) {
+		this.pais = pais;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Usuario [nombre=" + super.getNombre() + ", email=" + email+"]";

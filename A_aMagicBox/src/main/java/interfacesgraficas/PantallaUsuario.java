@@ -25,6 +25,18 @@ public class PantallaUsuario extends JPanel{
 		botonAtras.setBounds(306, 251, 115, 25);
 		add(botonAtras);
 		
+		JLabel labelNombre = new JLabel("Nombre: "+ventana.usuarioLogado.getNombre());
+		labelNombre.setBounds(61, 68, 301, 25);
+		add(labelNombre);
+		
+		JLabel labelPais = new JLabel("País: "+ventana.usuarioLogado.getPais().toString());
+		labelPais.setBounds(57, 117, 107, 25);
+		add(labelPais);
+		
+		JLabel labelEmail = new JLabel("Email: "+ventana.usuarioLogado.getEmail());
+		labelEmail.setBounds(61, 93, 301, 25);
+		add(labelEmail);
+		
 		
 	}
 

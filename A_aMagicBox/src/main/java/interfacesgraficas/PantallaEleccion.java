@@ -87,7 +87,7 @@ public class PantallaEleccion extends JPanel {
 				ventana.irAPantalla("login");
 			}
 		});
-		botonIrLogin.setBounds(436, 337, 89, 23);
+		botonIrLogin.setBounds(359, 321, 89, 23);
 		add(botonIrLogin);
 
 	}
