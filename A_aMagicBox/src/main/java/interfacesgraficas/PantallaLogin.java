@@ -10,7 +10,9 @@ import javax.swing.border.MatteBorder;
 
 import clases.Usuario;
 import componentesvisuales.BotonAzul;
+import componentesvisuales.BotonLogin;
 import componentesvisuales.BotonRojo;
+import componentesvisuales.BotonSalir;
 import componentesvisuales.BotonVerde;
 import excepciones.ContrasegnaIncorrectaException;
 import excepciones.ContrasegnaInvalidaException;
@@ -24,17 +26,73 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import javax.swing.ImageIcon;
+import javax.swing.JSeparator;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseMotionAdapter;
 
 public class PantallaLogin extends JPanel{
 	private Ventana ventana;
 	private JTextField campoEmail;
 	private JPasswordField campoContraseña;
-	
+	private int xMouse,yMouse;
 	public PantallaLogin(Ventana v) {
 		this.ventana=v;
 		setLayout(null);
 		
-		JButton botonLogin = new BotonAzul("Login");
+		JPanel panelFondo = new JPanel();
+		panelFondo.setBackground(new Color(255, 255, 255));
+		panelFondo.setForeground(Color.PINK);
+		panelFondo.setBounds(0, 0, 800, 500);
+		add(panelFondo);
+		panelFondo.setLayout(null);
+		
+		JLabel etiquetaTitulo = new JLabel("INICIAR SESIÓN");
+		etiquetaTitulo.setBounds(34, 61, 267, 44);
+		panelFondo.add(etiquetaTitulo);
+		etiquetaTitulo.setForeground(new Color(112, 128, 144));
+		etiquetaTitulo.setHorizontalAlignment(SwingConstants.LEFT);
+		etiquetaTitulo.setFont(new Font("Roboto Black", Font.BOLD, 27));
+		
+		campoEmail = new JTextField();
+		campoEmail.setOpaque(false);
+		campoEmail.setBackground(new Color(168, 228, 252));
+		campoEmail.setBorder(null);
+		campoEmail.setForeground(Color.GRAY);
+		campoEmail.setText("Ingrese su email");
+		campoEmail.setBounds(34, 154, 242, 20);
+		panelFondo.add(campoEmail);
+		campoEmail.setColumns(10);
+		
+		campoContraseña = new JPasswordField();
+		campoContraseña.setOpaque(false);
+		campoContraseña.setBackground(new Color(168, 228, 252));
+		campoContraseña.setBorder(null);
+		campoContraseña.setBounds(34, 232, 243, 20);
+		panelFondo.add(campoContraseña);
+		campoContraseña.setEchoChar('*');
+		
+		JLabel email = new JLabel("EMAIL");
+		email.setFont(new Font("Roboto Black", Font.PLAIN, 14));
+		email.setBounds(34, 137, 78, 14);
+		panelFondo.add(email);
+		email.setForeground(new Color(112, 128, 144));
+		
+		JLabel labelContraseña = new JLabel("CONTRASEÑA");
+		labelContraseña.setFont(new Font("Roboto Black", Font.PLAIN, 14));
+		labelContraseña.setBounds(34, 217, 242, 14);
+		panelFondo.add(labelContraseña);
+		labelContraseña.setForeground(new Color(112, 128, 144));
+		labelContraseña.setHorizontalAlignment(SwingConstants.LEFT);
+		
+		JButton botonRegistro = new BotonLogin("Registrarse");
+		botonRegistro.setBounds(644, 0, 156, 26);
+		panelFondo.add(botonRegistro);
+		
+		JButton botonLogin = new BotonLogin("Login");
+		botonLogin.setFont(new Font("Roboto Black", Font.BOLD, 20));
+		botonLogin.setBounds(34, 263, 113, 44);
+		panelFondo.add(botonLogin);
 		botonLogin.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -55,61 +113,86 @@ public class PantallaLogin extends JPanel{
 		});
 		botonLogin.setToolTipText("Pincha aquí para iniciar sesión");
 		
-		botonLogin.setBounds(95, 179, 160, 44);
-		this.add(botonLogin);
-		
-		JButton botonRegistro = new BotonAzul("Registrarse");
-		botonRegistro.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				ventana.irAPantalla("registro");
+		JButton BotonSalir = new BotonSalir("Salir");
+		BotonSalir.setText("X");
+		BotonSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
+		BotonSalir.setBounds(0, 0, 35, 26);
+		panelFondo.add(BotonSalir);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBackground(new Color(0, 0, 0));
+		separator.setBounds(34, 185, 243, 7);
+		panelFondo.add(separator);
+		
+		JSeparator separator_1 = new JSeparator();
+		separator_1.setBackground(Color.BLACK);
+		separator_1.setBounds(33, 256, 243, 7);
+		panelFondo.add(separator_1);
+		
+		JLabel labelTextoBienvenida = new JLabel("Hay una sorpresa para ti...¡Regístrate para descubrirla!");
+		labelTextoBienvenida.setForeground(new Color(112, 128, 144));
+		labelTextoBienvenida.setBackground(new Color(112, 128, 144));
+		labelTextoBienvenida.setFont(new Font("Roboto Black", Font.PLAIN, 11));
+		labelTextoBienvenida.setBounds(359, 3, 282, 26);
+		panelFondo.add(labelTextoBienvenida);
+		
+		JLabel labelIcono = new JLabel("New label");
+		labelIcono.setIcon(new ImageIcon("C:\\Users\\Spanys\\Desktop\\PROYECTO PROGRAMACION\\MagicBox\\A_aMagicBox\\iconos\\iconoVentana.png"));
+		labelIcono.setBounds(476, 26, 324, 474);
+		panelFondo.add(labelIcono);
+		
+		JLabel labelFondo = new JLabel("");
+		labelFondo.setIcon(new ImageIcon("C:\\Users\\Spanys\\Desktop\\PROYECTO PROGRAMACION\\MagicBox\\A_aMagicBox\\iconos\\fondoLogin1.jpg"));
+		labelFondo.setBounds(0, 0, 800, 500);
+		panelFondo.add(labelFondo);
 
-		botonRegistro.setBounds(283, 179, 143, 46);
-		add(botonRegistro);
+	
 		
-		JLabel etiquetaTitulo = new JLabel("Iniciar Sesión");
-		etiquetaTitulo.setForeground(new Color(255, 0, 0));
-		etiquetaTitulo.setHorizontalAlignment(SwingConstants.CENTER);
-		etiquetaTitulo.setFont(new Font("Miriam Libre", Font.ITALIC, 27));
-		etiquetaTitulo.setBounds(10, 11, 480, 44);
-		add(etiquetaTitulo);
 		
-		JLabel email = new JLabel("Email");
-		email.setForeground(new Color(255, 0, 0));
-		email.setBounds(108, 88, 46, 14);
-		add(email);
+		/**
+		 * Creamos un label en la parte superior de la pantalla para poder moverla.
+		 */
+		JLabel labelMoverVentana = new JLabel("");
+		labelMoverVentana.addMouseMotionListener(new MouseMotionAdapter() {
+			@Override
+			public void mouseDragged(MouseEvent e) {
+				 int x = e.getXOnScreen();
+			        int y = e.getYOnScreen();
+			        this.setLocation(x - xMouse, y - yMouse);
+			}
+
+			private void setLocation(int i, int j) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		labelMoverVentana.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				  xMouse = e.getX();
+			        yMouse = e.getY();
+			}
+		});
+		labelMoverVentana.setBounds(34, 0, 766, 33);
+		panelFondo.add(labelMoverVentana);
 		
-		JLabel labelContraseña = new JLabel("Contraseña");
-		labelContraseña.setForeground(new Color(255, 0, 0));
-		labelContraseña.setHorizontalAlignment(SwingConstants.CENTER);
-		labelContraseña.setBounds(95, 129, 78, 14);
-		add(labelContraseña);
-		
-		campoEmail = new JTextField();
-		campoEmail.setBounds(184, 85, 242, 20);
-		add(campoEmail);
-		campoEmail.setColumns(10);
-		
-		campoContraseña = new JPasswordField();
-		campoContraseña.setEchoChar('*');
-		campoContraseña.setBounds(183, 126, 243, 20);
-		add(campoContraseña);
-		
-		JButton BotonSalir = new BotonRojo("Salir");
+
 		BotonSalir.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				ventana.dispose();
 			}
 		});
-		BotonSalir.setBounds(200, 251, 102, 33);
-		add(BotonSalir);
 		
-		JLabel lblNewLabel = new JLabel("New label");// CAMBIAR RELATIVA
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Spanys\\Desktop\\PROYECTO PROGRAMACION\\MagicBox\\A_aMagicBox\\iconos\\fondoMagic.jpg"));
-		lblNewLabel.setBounds(0, 0, 536, 379);
-		add(lblNewLabel);
+		
+		botonRegistro.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ventana.irAPantalla("registro");
+			}
+		});
 	}
 }

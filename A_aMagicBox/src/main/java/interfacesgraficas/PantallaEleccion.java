@@ -16,12 +16,17 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import componentesvisuales.BotonAzul;
+import componentesvisuales.BotonLogin;
+import componentesvisuales.BotonSalir;
 import componentesvisuales.BotonVerde;
 
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 public class PantallaEleccion extends JPanel {
 	
@@ -35,13 +40,13 @@ public class PantallaEleccion extends JPanel {
 		setLayout(null);
 		
 		JLabel labelEleccion = new JLabel("ELIGE EXPERIENCIA");
-		labelEleccion.setBounds(100, 18, 113, 18);
-		labelEleccion.setForeground(Color.BLUE);
-		labelEleccion.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.BOLD, 15));
+		labelEleccion.setBounds(146, 65, 278, 23);
+		labelEleccion.setForeground(new Color(112, 128, 144));
+		labelEleccion.setFont(new Font("Roboto Black", Font.BOLD, 27));
 		add(labelEleccion);
 		
-		JButton botonComidas = new BotonAzul("Comidas");
-		botonComidas.setBounds(128, 91, 85, 39);
+		JButton botonComidas = new BotonLogin("Comidas");
+		botonComidas.setBounds(373, 264, 139, 39);
 		botonComidas.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -50,45 +55,89 @@ public class PantallaEleccion extends JPanel {
 		});
 		add(botonComidas);
 		
-		JButton botonCuidados = new BotonAzul("Cuidados");
+		JButton botonCuidados = new BotonLogin("Cuidados");
+		botonCuidados.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		botonCuidados.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				ventana.irAPantalla("cuidado");
 			}
 		});
-		botonCuidados.setBounds(122, 141, 91, 39);
+		botonCuidados.setBounds(36, 264, 134, 39);
 		add(botonCuidados);
 		
-		JButton botonViajes = new BotonAzul("Viajes");
+		JButton botonViajes = new BotonLogin("Viajes");
 		botonViajes.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				ventana.irAPantalla("destino");
 			}
 		});
-		botonViajes.setBounds(132, 191, 63, 39);
+		botonViajes.setBounds(205, 264, 134, 39);
 		add(botonViajes);
 		
-		JButton botonUsuario = new BotonAzul("Area usuario");
+		JButton botonUsuario = new BotonLogin("Area usuario");
+		botonUsuario.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		botonUsuario.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				ventana.irAPantalla("usuario");
 			}
 		});
-		botonUsuario.setBounds(329, 14, 150, 23);
+		botonUsuario.setBounds(616, 0, 184, 23);
 		add(botonUsuario);
 		
-		JButton botonIrLogin = new JButton("Logout");
+		JButton botonIrLogin = new BotonSalir("Logout");
+		botonIrLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		botonIrLogin.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				ventana.irAPantalla("login");
 			}
 		});
-		botonIrLogin.setBounds(359, 321, 89, 23);
+		botonIrLogin.setBounds(0, 439, 89, 23);
 		add(botonIrLogin);
+		
+		
+		JLabel labelIcono = new JLabel("New label");
+		labelIcono.setIcon(new ImageIcon("C:\\Users\\Spanys\\Desktop\\PROYECTO PROGRAMACION\\MagicBox\\A_aMagicBox\\iconos\\iconoVentana.png"));
+		labelIcono.setBounds(522, 0, 278, 500);
+		add(labelIcono);
+		
+		
+		JLabel labelIconoviaje = new JLabel("New label");
+		labelIconoviaje.setIcon(new ImageIcon("C:\\Users\\Spanys\\Desktop\\PROYECTO PROGRAMACION\\MagicBox\\A_aMagicBox\\iconos\\equipaje-de-viaje.png"));
+		labelIconoviaje.setBounds(221, 177, 95, 76);
+		add(labelIconoviaje);
+		
+		JLabel labelIconoComida = new JLabel("New label");
+		labelIconoComida.setIcon(new ImageIcon(PantallaEleccion.class.getResource("/imagenes/restaurante.png")));
+		labelIconoComida.setBounds(387, 177, 95, 76);
+		add(labelIconoComida);
+		
+		
+		JLabel labelIconoCuidado = new JLabel("");
+		labelIconoCuidado.setIcon(new ImageIcon(PantallaEleccion.class.getResource("/imagenes/tratamiento-de-belleza (1).png")));
+		labelIconoCuidado.setBounds(53, 171, 95, 82);
+		add(labelIconoCuidado);
+	
+		
+		
+		JLabel labelFondo = new JLabel("New label");
+		labelFondo.setIcon(new ImageIcon("C:\\Users\\Spanys\\Desktop\\PROYECTO PROGRAMACION\\MagicBox\\A_aMagicBox\\iconos\\fondoLogin1.jpg"));
+		labelFondo.setBounds(0, 0, 800, 500);
+		add(labelFondo);
+	
+		
 
 	}
 }

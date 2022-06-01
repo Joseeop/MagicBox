@@ -12,6 +12,9 @@ public class Comidas extends Actividad {
 		super(nombre, foto, descripcion);
 		this.tipoComida = tipoComida;
 	}
+	
+	
+	
 
 	@Override
 	public String toString() {

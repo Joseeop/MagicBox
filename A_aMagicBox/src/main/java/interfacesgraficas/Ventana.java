@@ -25,7 +25,7 @@ public class Ventana extends JFrame{
 		
 		
 		
-		this.setSize(500,400);
+		this.setSize(800,500); //500,400
 		this.setLocationRelativeTo(null);
 		
 		//Pantalla completa las dos lineas siguentes

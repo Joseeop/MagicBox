@@ -17,10 +17,37 @@ public Actividad(String nombre, BufferedImage foto, String descripcion) {
 
 
 
+public BufferedImage getFoto() {
+	return foto;
+}
+
+
+
+public void setFoto(BufferedImage foto) {
+	this.foto = foto;
+}
+
+
+
+public String getDescripcion() {
+	return descripcion;
+}
+
+
+
+public void setDescripcion(String descripcion) {
+	this.descripcion = descripcion;
+}
+
+
+
 @Override
 public String toString() {
 	return super.toString()+ "  Actividad [foto=" + foto + ", descripcion=" + descripcion + "]";
 }
+
+
+
 
 
 

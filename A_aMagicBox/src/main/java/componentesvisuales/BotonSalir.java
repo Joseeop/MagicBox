@@ -9,15 +9,17 @@ import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.border.MatteBorder;
 
-public class BotonRojo extends JButton {
-	public BotonRojo(String s){
+public class BotonSalir extends JButton {
+
+	
+	public BotonSalir(String s){
 		super(s);
 		estilosPorDefecto();
 		this.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				setForeground(Color.white);
-				setBackground(new Color(112,128,144));
+				setBackground(new Color(255,128,144));
 				setCursor(new Cursor(Cursor.HAND_CURSOR));
 			}
 			@Override
@@ -36,4 +38,7 @@ public class BotonRojo extends JButton {
 		this.setFont(new Font("Roboto Black", Font.BOLD, 20));
 		
 	}
+	
+	
+	
 }

@@ -9,8 +9,9 @@ import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.border.MatteBorder;
 
-public class BotonRojo extends JButton {
-	public BotonRojo(String s){
+public class BotonLogin extends JButton {
+
+	public BotonLogin(String s){
 		super(s);
 		estilosPorDefecto();
 		this.addMouseListener(new MouseAdapter() {
@@ -31,8 +32,8 @@ public class BotonRojo extends JButton {
 		this.setForeground(new Color(255, 255, 255));
 		this.setBackground(new Color(135, 206, 235));
 		this.setFocusable(false);
-		this.setBorder(
-				new MatteBorder(3,3,3,3,new Color(200,0,0)));
+//		this.setBorder(
+//				new MatteBorder(3,3,3,3,new Color(200,0,0)));
 		this.setFont(new Font("Roboto Black", Font.BOLD, 20));
 		
 	}

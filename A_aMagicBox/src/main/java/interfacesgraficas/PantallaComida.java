@@ -2,6 +2,7 @@ package interfacesgraficas;
 
 import javax.swing.JPanel;
 
+import clases.Actividad;
 import clases.Comidas;
 import enumeraciones.Pais;
 
@@ -89,9 +90,20 @@ public class PantallaComida extends JPanel {
 						File file=new File("C:/Users/Spanys/Desktop/PROYECTO PROGRAMACION/MagicBox/A_aMagicBox/iconos/fondoMagic.jpg");
 						BufferedImage foto=ImageIO.read(file);
 						Comidas comida=new Comidas(nombreRes, foto, descripcion, tipoComida);
+						Actividad actividad=new Actividad(nombreRes,foto,descripcion);
 						System.out.println(comida.toString());
-					
 						
+						
+						//PRUEBA
+						JLabel labelPrueba = new JLabel("Descripción: "+((Actividad) comida).getDescripcion());
+						GridBagConstraints gbc_labelPrueba = new GridBagConstraints();
+						gbc_labelPrueba.insets = new Insets(0, 0, 0, 5);
+						gbc_labelPrueba.gridx = 2;
+						gbc_labelPrueba.gridy = 3;
+						add(labelPrueba, gbc_labelPrueba);
+						
+					
+					
 					} 
 				
 				} catch (SQLException e) {
@@ -122,11 +134,8 @@ public class PantallaComida extends JPanel {
 				ventana.irAPantalla("seleccion");
 			}
 		});
-		GridBagConstraints gbc_botonAtras = new GridBagConstraints();
-		gbc_botonAtras.gridx = 4;
-		gbc_botonAtras.gridy = 3;
-		add(botonAtras, gbc_botonAtras);
 		
+
 		
 	}
 
