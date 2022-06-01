@@ -21,21 +21,24 @@ public class PantallaUsuario extends JPanel{
 				ventana.irAPantalla("seleccion");
 			}
 		});
-		botonAtras.setIcon(new ImageIcon("C:\\Users\\Spanys\\Desktop\\PROYECTO PROGRAMACION\\MagicBox\\A_aMagicBox\\botones\\botonAtras.png"));
-		botonAtras.setBounds(306, 251, 115, 25);
-		add(botonAtras);
+	
 		
 		JLabel labelNombre = new JLabel("Nombre: "+ventana.usuarioLogado.getNombre());
-		labelNombre.setBounds(61, 68, 301, 25);
+		labelNombre.setBounds(98, 156, 301, 25);
 		add(labelNombre);
 		
 		JLabel labelPais = new JLabel("País: "+ventana.usuarioLogado.getPais().toString());
-		labelPais.setBounds(57, 117, 107, 25);
+		labelPais.setBounds(98, 205, 107, 25);
 		add(labelPais);
 		
 		JLabel labelEmail = new JLabel("Email: "+ventana.usuarioLogado.getEmail());
-		labelEmail.setBounds(61, 93, 301, 25);
+		labelEmail.setBounds(98, 181, 301, 25);
 		add(labelEmail);
+		
+		JLabel labelFondo = new JLabel("New label");
+		labelFondo.setIcon(new ImageIcon(PantallaUsuario.class.getResource("/imagenes/fondoLogin1.jpg")));
+		labelFondo.setBounds(0, 0, 800, 500);
+		add(labelFondo);
 		
 		
 	}

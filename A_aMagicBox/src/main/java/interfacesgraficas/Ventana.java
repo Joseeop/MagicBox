@@ -34,7 +34,7 @@ public class Ventana extends JFrame{
 		
 		this.setTitle("MAGIC BOX");
 		this.setIconImage(new ImageIcon("./iconos/iconoVentana.png").getImage());
-		this.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
+		this.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 		//this.setAlway	sOnTop(true);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setResizable(false);
