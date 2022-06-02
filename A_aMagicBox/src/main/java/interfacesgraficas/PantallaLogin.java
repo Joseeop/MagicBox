@@ -54,7 +54,26 @@ public class PantallaLogin extends JPanel{
 		etiquetaTitulo.setHorizontalAlignment(SwingConstants.LEFT);
 		etiquetaTitulo.setFont(new Font("Roboto Black", Font.BOLD, 27));
 		
+		/**
+		 * Hacemos un evento para comprobar cuando presionamos sobre el campo de usuario, aún no hemos introducido los datos
+		 * si campo email está igual que cuando lo pusimos por defecto, dejará ese campo en blanco y cambiará la letra
+		 * hacemos lo mismo con contraseña para que no deshaga los cambios si cambiamos de campo.
+		 */
 		campoEmail = new JTextField();
+		campoEmail.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+		        if (campoEmail.getText().equals("Ingrese su email")) {
+		        	campoEmail.setText("");
+		        	campoEmail.setForeground(Color.black);
+		        }
+		        if (String.valueOf(campoContraseña.getPassword()).isEmpty()) {
+		        	campoContraseña.setText("********");
+		        	campoContraseña.setForeground(Color.gray);
+		        }
+		    }
+			}
+		);
 		campoEmail.setOpaque(false);
 		campoEmail.setBackground(new Color(168, 228, 252));
 		campoEmail.setBorder(null);
@@ -65,12 +84,29 @@ public class PantallaLogin extends JPanel{
 		campoEmail.setColumns(10);
 		
 		campoContraseña = new JPasswordField();
+		campoContraseña.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+			     if (String.valueOf(campoContraseña.getPassword()).equals("********")) {
+			    	 campoContraseña.setText("");
+			    	 campoContraseña.setForeground(Color.black);
+			        }
+			        if (campoEmail.getText().isEmpty()) {
+			        	campoEmail.setText("Ingrese su email");
+			        	campoEmail.setForeground(Color.gray);
+			        }
+			    }
+				
+			}
+		);
 		campoContraseña.setOpaque(false);
 		campoContraseña.setBackground(new Color(168, 228, 252));
 		campoContraseña.setBorder(null);
 		campoContraseña.setBounds(34, 232, 243, 20);
 		panelFondo.add(campoContraseña);
 		campoContraseña.setEchoChar('*');
+		
+		
 		
 		JLabel email = new JLabel("EMAIL");
 		email.setFont(new Font("Roboto Black", Font.PLAIN, 14));
@@ -143,6 +179,8 @@ public class PantallaLogin extends JPanel{
 		labelIcono.setIcon(new ImageIcon("C:\\Users\\Spanys\\Desktop\\PROYECTO PROGRAMACION\\MagicBox\\A_aMagicBox\\iconos\\iconoVentana.png"));
 		labelIcono.setBounds(476, 26, 324, 474);
 		panelFondo.add(labelIcono);
+		
+		
 		
 		JLabel labelFondo = new JLabel("");
 		labelFondo.setIcon(new ImageIcon("C:\\Users\\Spanys\\Desktop\\PROYECTO PROGRAMACION\\MagicBox\\A_aMagicBox\\iconos\\fondoLogin1.jpg"));

@@ -79,7 +79,7 @@ public class PantallaEleccion extends JPanel {
 		botonViajes.setBounds(205, 264, 134, 39);
 		add(botonViajes);
 		
-		JButton botonUsuario = new BotonLogin("Area usuario");
+		JButton botonUsuario = new BotonLogin("Bienvenid@ "+ventana.usuarioLogado.getNombre());
 		botonUsuario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
@@ -90,7 +90,7 @@ public class PantallaEleccion extends JPanel {
 				ventana.irAPantalla("usuario");
 			}
 		});
-		botonUsuario.setBounds(616, 0, 184, 23);
+		botonUsuario.setBounds(496, 0, 304, 23);
 		add(botonUsuario);
 		
 		JButton botonIrLogin = new BotonSalir("Logout");
