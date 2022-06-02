@@ -109,13 +109,13 @@ public class PantallaEleccion extends JPanel {
 		
 		
 		JLabel labelIcono = new JLabel("New label");
-		labelIcono.setIcon(new ImageIcon("C:\\Users\\Spanys\\Desktop\\PROYECTO PROGRAMACION\\MagicBox\\A_aMagicBox\\iconos\\iconoVentana.png"));
+		labelIcono.setIcon(new ImageIcon(PantallaEleccion.class.getResource("/imagenes/IconoVentana.png")));
 		labelIcono.setBounds(522, 0, 278, 500);
 		add(labelIcono);
 		
 		
 		JLabel labelIconoviaje = new JLabel("New label");
-		labelIconoviaje.setIcon(new ImageIcon("C:\\Users\\Spanys\\Desktop\\PROYECTO PROGRAMACION\\MagicBox\\A_aMagicBox\\iconos\\equipaje-de-viaje.png"));
+		labelIconoviaje.setIcon(new ImageIcon(PantallaEleccion.class.getResource("/imagenes/equipaje-de-viaje.png")));
 		labelIconoviaje.setBounds(221, 177, 95, 76);
 		add(labelIconoviaje);
 		
@@ -133,7 +133,7 @@ public class PantallaEleccion extends JPanel {
 		
 		
 		JLabel labelFondo = new JLabel("New label");
-		labelFondo.setIcon(new ImageIcon("C:\\Users\\Spanys\\Desktop\\PROYECTO PROGRAMACION\\MagicBox\\A_aMagicBox\\iconos\\fondoLogin1.jpg"));
+		labelFondo.setIcon(new ImageIcon(PantallaEleccion.class.getResource("/imagenes/fondoLogin1.jpg")));
 		labelFondo.setBounds(0, 0, 800, 500);
 		add(labelFondo);
 	

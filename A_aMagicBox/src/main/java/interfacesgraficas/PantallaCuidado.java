@@ -15,6 +15,7 @@ import utils.ConexionBD;
 
 import javax.swing.JButton;
 
+import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -37,9 +38,14 @@ public class PantallaCuidado extends JPanel {
 		this.ventana=v;
 		setLayout(null);
 		
+		JLabel labelImagenCuidado = new JLabel("New label");
+		labelImagenCuidado.setIcon(new ImageIcon(PantallaCuidado.class.getResource("/imagenes/facial.png")));
+		labelImagenCuidado.setBounds(532, 0, 268, 500);
+		add(labelImagenCuidado);
+		
 		final JComboBox seleccionCuidado = new JComboBox();
 		seleccionCuidado.setModel(new DefaultComboBoxModel(TipoCuidado.values()));
-		seleccionCuidado.setBounds(163, 150, 107, 22);
+		seleccionCuidado.setBounds(238, 192, 107, 22);
 		add(seleccionCuidado);
 		seleccionCuidado.addActionListener(new ActionListener() {
 			@Override
@@ -77,22 +83,29 @@ public class PantallaCuidado extends JPanel {
 				
 			}
 		});
-		
-		JButton botonAtras = new JButton("Atrás");
-		botonAtras.addMouseListener(new MouseAdapter() {
+		JLabel labelVolver = new JLabel("New label");
+		labelVolver.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				
 				ventana.irAPantalla("seleccion");
 			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
 		});
-		botonAtras.setBounds(351, 266, 89, 23);
-		add(botonAtras);
+		labelVolver.setIcon(new ImageIcon(PantallaUsuario.class.getResource("/imagenes/iconoVentanaInicio.png")));
+		labelVolver.setBounds(0, 0, 60, 53);
+		add(labelVolver);
 		
-		JLabel lblNewLabel = new JLabel("New label"); //CAMBIAR RUTA A RELATIVA
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Spanys\\Desktop\\PROYECTO PROGRAMACION\\MagicBox\\A_aMagicBox\\iconos\\EligeCuidado.png"));
-		lblNewLabel.setBounds(0, 0, 450, 300);
-		add(lblNewLabel);
+		JLabel labelFondo = new JLabel("New label");
+		labelFondo.setIcon(new ImageIcon(PantallaCuidado.class.getResource("/imagenes/fondoLogin1.jpg")));
+		labelFondo.setBounds(0, 0, 800, 500);
+		add(labelFondo);
 		
 		
 	}

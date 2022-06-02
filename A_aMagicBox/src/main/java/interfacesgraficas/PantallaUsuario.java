@@ -5,6 +5,9 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Font;
+import java.awt.Color;
+import java.awt.Cursor;
 
 public class PantallaUsuario extends JPanel{
 	
@@ -24,23 +27,55 @@ public class PantallaUsuario extends JPanel{
 	
 		
 		JLabel labelNombre = new JLabel("Nombre: "+ventana.usuarioLogado.getNombre());
-		labelNombre.setBounds(98, 156, 301, 25);
+		labelNombre.setForeground(new Color(112, 128, 144));
+		labelNombre.setFont(new Font("Roboto Black", Font.BOLD, 11));
+		labelNombre.setBounds(98, 166, 301, 25);
 		add(labelNombre);
 		
 		JLabel labelPais = new JLabel("País: "+ventana.usuarioLogado.getPais().toString());
-		labelPais.setBounds(98, 205, 107, 25);
+		labelPais.setForeground(new Color(112, 128, 144));
+		labelPais.setFont(new Font("Roboto Black", Font.BOLD, 11));
+		labelPais.setBounds(98, 238, 224, 25);
 		add(labelPais);
 		
 		JLabel labelEmail = new JLabel("Email: "+ventana.usuarioLogado.getEmail());
-		labelEmail.setBounds(98, 181, 301, 25);
+		labelEmail.setFont(new Font("Roboto Black", Font.BOLD, 11));
+		labelEmail.setForeground(new Color(112, 128, 144));
+		labelEmail.setBounds(98, 202, 301, 25);
 		add(labelEmail);
+		
+		JLabel labelUsuarioImagen = new JLabel("New label");
+		labelUsuarioImagen.setIcon(new ImageIcon(PantallaUsuario.class.getResource("/imagenes/usuario.png")));
+		labelUsuarioImagen.setBounds(516, 0, 284, 500);
+		add(labelUsuarioImagen);
+		
+		JLabel labelVolver = new JLabel("New label");
+		labelVolver.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ventana.irAPantalla("seleccion");
+			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+		});
+		labelVolver.setIcon(new ImageIcon(PantallaUsuario.class.getResource("/imagenes/iconoVentanaInicio.png")));
+		labelVolver.setBounds(0, 0, 60, 53);
+		add(labelVolver);
 		
 		JLabel labelFondo = new JLabel("New label");
 		labelFondo.setIcon(new ImageIcon(PantallaUsuario.class.getResource("/imagenes/fondoLogin1.jpg")));
 		labelFondo.setBounds(0, 0, 800, 500);
 		add(labelFondo);
 		
+	
+		
+	
 		
 	}
-
 }
