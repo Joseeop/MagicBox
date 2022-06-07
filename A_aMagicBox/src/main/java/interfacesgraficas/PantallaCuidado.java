@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 
 import clases.Comidas;
 import clases.Cuidados;
+import componentesvisuales.BotonRegistro;
 
 import javax.swing.JComboBox;
 import javax.imageio.ImageIO;
@@ -64,7 +65,7 @@ public class PantallaCuidado extends JPanel {
 						
 						File file=new File("C:/Users/Spanys/Desktop/PROYECTO PROGRAMACION/MagicBox/A_aMagicBox/iconos/fondoMagic.jpg");
 						BufferedImage foto=ImageIO.read(file);
-						Cuidados cuidado=new Cuidados(nombreCuidado, foto, descripcion, tipoCuidado);
+						Cuidados cuidado=new Cuidados(nombreCuidado, rutaFoto, descripcion, tipoCuidado);
 						System.out.println(cuidado.toString());
 					
 						
@@ -101,6 +102,30 @@ public class PantallaCuidado extends JPanel {
 		labelVolver.setIcon(new ImageIcon(PantallaUsuario.class.getResource("/imagenes/iconoVentanaInicio.png")));
 		labelVolver.setBounds(0, 0, 60, 53);
 		add(labelVolver);
+		/**
+		 * Botón que nos llevará a la siguiente pantalla según la elección(SPA,MASAJE o TRATAMIENTO)
+		 */
+		JButton botonAdelante = new BotonRegistro("¡ADELANTE!");
+		botonAdelante.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				final String eleccion=seleccionCuidado.getSelectedItem().toString();
+				
+				if (eleccion=="SPA"){
+			ventana.irAPantalla("spa", eleccion);
+		}else if(eleccion=="MASAJE") {
+			ventana.irAPantalla("masaje", eleccion);
+		}else if(eleccion=="TRATAMIENTO") {
+			ventana.irAPantalla("tratamiento",eleccion);
+		}
+			}
+		});
+		botonAdelante.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		botonAdelante.setBounds(162, 261, 168, 23);
+		add(botonAdelante);
 		
 		JLabel labelFondo = new JLabel("New label");
 		labelFondo.setIcon(new ImageIcon(PantallaCuidado.class.getResource("/imagenes/fondoLogin1.jpg")));

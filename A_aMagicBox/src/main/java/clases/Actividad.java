@@ -4,12 +4,12 @@ import java.awt.image.BufferedImage;
 
 public class Actividad extends ElementoConNombre {
 	
-private BufferedImage foto;
-private String descripcion;
+protected String foto;
+protected String descripcion;
 
 
 
-public Actividad(String nombre, BufferedImage foto, String descripcion) {
+public Actividad(String nombre, String foto, String descripcion) {
 	super(nombre);
 	this.foto = foto;
 	this.descripcion = descripcion;
@@ -17,13 +17,19 @@ public Actividad(String nombre, BufferedImage foto, String descripcion) {
 
 
 
-public BufferedImage getFoto() {
+public Actividad() {
+	// TODO Auto-generated constructor stub
+}
+
+
+
+public String getFoto() {
 	return foto;
 }
 
 
 
-public void setFoto(BufferedImage foto) {
+public void String(String foto) {
 	this.foto = foto;
 }
 

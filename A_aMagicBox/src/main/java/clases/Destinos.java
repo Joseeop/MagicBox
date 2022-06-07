@@ -7,7 +7,7 @@ public class Destinos extends Actividad {
 
 private String ubicacion;
 
-public Destinos(String nombre, BufferedImage foto, String descripcion, String ubicacion) {
+public Destinos(String nombre, String foto, String descripcion, String ubicacion) {
 	super(nombre, foto, descripcion);
 	this.ubicacion = ubicacion;
 }

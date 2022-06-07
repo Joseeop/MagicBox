@@ -7,7 +7,7 @@ public class PrincipalMagic {
 	public static void main(String[] args) {
 		
 		
-		Ventana ventana=new Ventana();
+		Ventana ventana=new Ventana(args);
 		
 	}
 

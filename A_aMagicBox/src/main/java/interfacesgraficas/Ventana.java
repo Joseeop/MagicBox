@@ -5,10 +5,13 @@ import java.awt.Image;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import clases.Comidas;
 import clases.Usuario;
 
 public class Ventana extends JFrame{
@@ -21,7 +24,8 @@ public class Ventana extends JFrame{
 	 * Lo tenemos aquí para que esté disponible en todas las pantallas.
 	 */
 	protected Usuario usuarioLogado;
-	public Ventana() {
+	protected Comidas restaurante;
+	public Ventana(String[] args) {
 		
 		
 		
@@ -38,7 +42,27 @@ public class Ventana extends JFrame{
 		//this.setAlway	sOnTop(true);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setResizable(false);
-		this.pantallaActual=new PantallaLogin(this);
+		if (args.length > 0) {
+            String email = args[0];
+            String contraseña = args[1];
+            try {
+                usuarioLogado = new Usuario(email, contraseña);
+
+                JOptionPane.showMessageDialog(this, "Bienvenid@ " + usuarioLogado.getNombre(),
+                        "Inicio de sesion con éxito ", JOptionPane.INFORMATION_MESSAGE);
+                this.pantallaActual = new PantallaEleccion(this);
+
+            } catch (Exception e1) {
+                JOptionPane.showMessageDialog(this, e1.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                this.pantallaActual = new PantallaLogin(this);
+            }
+        } else {
+            this.pantallaActual = new PantallaLogin(this);
+        }
+
+
+    
+		
 		this.setContentPane(this.pantallaActual);
 		this.setVisible(true);
 	}
@@ -73,6 +97,9 @@ public class Ventana extends JFrame{
 	case "usuario":
 		this.pantallaActual=new PantallaUsuario(this);
 		break;
+	case "informacion":
+		this.pantallaActual=new PantallaInformacion(this);
+		break;
 	}
 	
 	
@@ -80,4 +107,52 @@ public class Ventana extends JFrame{
 	this.setContentPane(pantallaActual);
 		
 	}
+	public void irAPantalla(String nombrePantalla,String ruta) {
+
+		this.pantallaActual.setVisible(false);
+		this.pantallaActual=null;
+		switch(nombrePantalla) {
+		
+		case "cena":
+			this.pantallaActual=new PantallaCena(this,ruta);
+			break;
+		case "almuerzo":
+			this.pantallaActual=new PantallaAlmuerzo(this, ruta);
+			break;
+		case "masaje":
+			this.pantallaActual=new PantallaMasaje(this,ruta);
+			break;
+		case "spa":
+			this.pantallaActual=new PantallaSpa(this,ruta);
+			break;
+		case "tratamiento":
+			this.pantallaActual=new PantallaTratamiento(this,ruta);
+			break;
+		
+		
+		}
+		this.pantallaActual.setVisible(true);
+		this.setContentPane(pantallaActual);
+		}
+	
+	/**
+	 * Función para ir a la pantalla final del sorteo a la que pasaremos todos los datos de la elección ganadora.
+	 * @param nombrePantalla
+	 * @param destinoFinal
+	 * @param imagenDestino
+	 */
+	public void irAPantalla(String nombrePantalla,String destinoFinal,ImageIcon imagenDestino) {
+		this.pantallaActual.setVisible(false);
+		this.pantallaActual=null;
+		switch(nombrePantalla) {
+		
+		case "destinoFinal":
+			this.pantallaActual=new PantallaDestinoFinal(this,destinoFinal,imagenDestino);
+			break;
+		
+		}
+		this.pantallaActual.setVisible(true);
+		this.setContentPane(pantallaActual);
+	}
+
 }
