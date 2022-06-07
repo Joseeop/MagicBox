@@ -13,6 +13,7 @@ public class PantallaInformacion extends JPanel {
 	
 	private Ventana ventana;
 	
+	//HACER AQUI LECTURA DE FICHEROS.
 	
 	public PantallaInformacion (Ventana v) {
 		

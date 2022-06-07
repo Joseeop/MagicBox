@@ -284,7 +284,7 @@ public class PantallaDestino extends JPanel {
 			}
 		});
 		botonSorteo.setFont(new Font("Roboto Black", Font.BOLD, 15));
-		botonSorteo.setBounds(214, 425, 122, 35);
+		botonSorteo.setBounds(205, 0, 122, 35);
 		add(botonSorteo);
 		
 		JLabel labelFondo = new JLabel("FONDO");
