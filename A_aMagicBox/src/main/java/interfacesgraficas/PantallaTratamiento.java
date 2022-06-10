@@ -29,17 +29,17 @@ public class PantallaTratamiento extends JPanel {
 		
 		JLabel labelRadiofrecuencia = new JLabel("radiofrecuencia");
 		labelRadiofrecuencia.setIcon(new ImageIcon(PantallaTratamiento.class.getResource("/imagenes/radiofrecuencia.jpg")));
-		labelRadiofrecuencia.setBounds(137, 294, 204, 155);
+		labelRadiofrecuencia.setBounds(137, 273, 204, 155);
 		add(labelRadiofrecuencia);
 		
 		JLabel labellifting = new JLabel("LIFTING");
 		labellifting.setIcon(new ImageIcon(PantallaTratamiento.class.getResource("/imagenes/lifting.jpg")));
-		labellifting.setBounds(243, 102, 204, 155);
+		labellifting.setBounds(241, 84, 204, 155);
 		add(labellifting);
 		
 		JLabel labelPeeling = new JLabel("peeling");
 		labelPeeling.setIcon(new ImageIcon(PantallaTratamiento.class.getResource("/imagenes/peeling.jpg")));
-		labelPeeling.setBounds(20, 102, 204, 155);
+		labelPeeling.setBounds(20, 84, 204, 155);
 		add(labelPeeling);
 		/**
 		 * Botón 1
@@ -58,7 +58,7 @@ public class PantallaTratamiento extends JPanel {
 			}
 		});
 		botonLifting.setText("lifting");
-		botonLifting.setBounds(271, 260, 160, 23);
+		botonLifting.setBounds(269, 250, 160, 23);
 		add(botonLifting);
 		
 		/**
@@ -77,7 +77,7 @@ public class PantallaTratamiento extends JPanel {
 			}
 		});
 		botonPeeling.setText("peeling");
-		botonPeeling.setBounds(43, 260, 160, 23);
+		botonPeeling.setBounds(45, 250, 160, 23);
 		add(botonPeeling);
 		/**
 		 * Botón 3
@@ -95,7 +95,7 @@ public class PantallaTratamiento extends JPanel {
 			}
 		});
 		botonRadiofrecuencia.setText("radiofrecuencia");
-		botonRadiofrecuencia.setBounds(159, 451, 160, 23);
+		botonRadiofrecuencia.setBounds(159, 428, 160, 23);
 		add(botonRadiofrecuencia);
 		
 	
@@ -123,6 +123,12 @@ public class PantallaTratamiento extends JPanel {
 		labelVolver.setBounds(0, 0, 60, 53);
 		add(labelVolver);
 		
+		/**
+		 * Botón encargado de, una vez seleccionados todos los destinos preferentes y añadidos al ArrayList
+		 * generará un destino aleatorio y lo igualará al destino final. Más adelante comprobará ese destino final
+		 * y le asignará una imagen. Finalmente le pasaremos a la PantallaDestinoFinal los argumentos 
+		 * destinoFinal(nombre ganador) e imagenDestino (foto del lugar ganador)
+		 */
 		JButton botonSorteo = new BotonEleccion("SORTEO");
 		botonSorteo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

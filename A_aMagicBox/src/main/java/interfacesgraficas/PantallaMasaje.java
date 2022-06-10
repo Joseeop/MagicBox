@@ -125,6 +125,12 @@ public class PantallaMasaje extends JPanel {
 		labelVolver.setBounds(0, 0, 60, 53);
 		add(labelVolver);
 		
+		/**
+		 * Botón encargado de, una vez seleccionados todos los destinos preferentes y añadidos al ArrayList
+		 * generará un destino aleatorio y lo igualará al destino final. Más adelante comprobará ese destino final
+		 * y le asignará una imagen. Finalmente le pasaremos a la PantallaDestinoFinal los argumentos 
+		 * destinoFinal(nombre ganador) e imagenDestino (foto del lugar ganador)
+		 */
 		JButton botonSorteo = new BotonEleccion("SORTEO");
 		botonSorteo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

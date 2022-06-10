@@ -176,14 +176,14 @@ public class PantallaLogin extends JPanel{
 		panelFondo.add(labelTextoBienvenida);
 		
 		JLabel labelIcono = new JLabel("New label");
-		labelIcono.setIcon(new ImageIcon("C:\\Users\\Spanys\\Desktop\\PROYECTO PROGRAMACION\\MagicBox\\A_aMagicBox\\iconos\\iconoVentana.png"));
+		labelIcono.setIcon(new ImageIcon("./iconos/iconoVentana.png"));
 		labelIcono.setBounds(476, 26, 324, 474);
 		panelFondo.add(labelIcono);
 		
 		
 		
 		JLabel labelFondo = new JLabel("");
-		labelFondo.setIcon(new ImageIcon("C:\\Users\\Spanys\\Desktop\\PROYECTO PROGRAMACION\\MagicBox\\A_aMagicBox\\iconos\\fondoLogin1.jpg"));
+		labelFondo.setIcon(new ImageIcon("./iconos/fondoLogin1.jpg"));
 		labelFondo.setBounds(0, 0, 800, 500);
 		panelFondo.add(labelFondo);
 

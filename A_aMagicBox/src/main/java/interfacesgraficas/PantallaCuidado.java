@@ -73,7 +73,7 @@ public class PantallaCuidado extends JPanel {
 						String descripcion=cursor.getString("descripcion");
 						TipoCuidado tipoCuidado=TipoCuidado.valueOf(cursor.getString("tipoCuidado"));
 						
-						File file=new File("C:/Users/Spanys/Desktop/PROYECTO PROGRAMACION/MagicBox/A_aMagicBox/iconos/fondoMagic.jpg");
+						File file=new File("./iconos/fondoMagic.jpg");
 						BufferedImage foto=ImageIO.read(file);
 						Cuidados cuidado=new Cuidados(nombreCuidado, rutaFoto, descripcion, tipoCuidado);
 						System.out.println(cuidado.toString());
