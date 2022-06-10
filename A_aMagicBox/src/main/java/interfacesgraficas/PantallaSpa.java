@@ -1,26 +1,106 @@
 package interfacesgraficas;
 
 import javax.swing.JPanel;
+
+import componentesvisuales.BotonEleccion;
+
 import javax.swing.JLabel;
 
 import java.awt.Cursor;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 
 public class PantallaSpa extends JPanel {
 	
 	private Ventana ventana;
+	
+	private ArrayList<String> listaSpa = new ArrayList<String>();
+	private BotonEleccion botonTercerActo2;
 	
 	
 	public PantallaSpa (Ventana v, String ruta) {
 		this.ventana=v;
 		setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("SPA");
-		lblNewLabel.setBounds(155, 145, 162, 94);
-		add(lblNewLabel);
+		JLabel labelCarratraca = new JLabel("Carratraca");
+		labelCarratraca.setIcon(new ImageIcon(PantallaSpa.class.getResource("/imagenes/spaCarratracaIcono.jpg")));
+		labelCarratraca.setBounds(134, 284, 204, 155);
+		add(labelCarratraca);
+		
+		JLabel labelHammam = new JLabel("Hammam");
+		labelHammam.setIcon(new ImageIcon(PantallaSpa.class.getResource("/imagenes/HammamIcono.jpg")));
+		labelHammam.setBounds(249, 98, 204, 155);
+		add(labelHammam);
+		
+		JLabel labelBenahavis = new JLabel("Benahavis");
+		labelBenahavis.setIcon(new ImageIcon(PantallaSpa.class.getResource("/imagenes/spaBenahavisIcono.jpg")));
+		labelBenahavis.setBounds(22, 98, 204, 155);
+		add(labelBenahavis);
+		
+		
+		/**
+		 * Botón 1
+		 */
+		BotonEleccion botonHammam;
+		botonHammam = new BotonEleccion("Hammam");
+		botonHammam.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+					
+						if(!listaSpa.contains("Hammam")) {
+							listaSpa.add("Hammam");
+						}else {
+							listaSpa.remove("Hammam");
+						}
+			
+			}
+		});
+		botonHammam.setText("Hammam");
+		botonHammam.setBounds(261, 254, 160, 23);
+		add(botonHammam);
+		
+		/**
+		 * Botón 2
+		 */
+		BotonEleccion botonBenahavis = new BotonEleccion("Benahavis");
+		botonBenahavis.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+					
+						if(!listaSpa.contains("Benahavis")) {
+							listaSpa.add("Benahavis");
+						}else {
+							listaSpa.remove("Benahavis");
+						}
+			
+			}
+		});
+		botonBenahavis.setText("Benahavis");
+		botonBenahavis.setBounds(35, 254, 160, 23);
+		add(botonBenahavis);
+		/**
+		 * Botón 3
+		 */
+		BotonEleccion botonCarratraca = new BotonEleccion("Carratraca");
+		botonCarratraca.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+					
+						if(!listaSpa.contains("Carratraca")) {
+							listaSpa.add("Carratraca");
+						}else {
+							listaSpa.remove("Carratraca");
+						}
+			
+			}
+		});
+		botonCarratraca.setText("Carratraca");
+		botonCarratraca.setBounds(155, 442, 160, 23);
+		add(botonCarratraca);
 		
 
 		
@@ -48,6 +128,53 @@ public class PantallaSpa extends JPanel {
 		labelVolver.setBounds(0, 0, 60, 53);
 		add(labelVolver);
 		
+		JButton botonSorteo = new BotonEleccion("SORTEO");
+		botonSorteo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String destinoFinal="";
+				ImageIcon imagenDestino = null;
+				if(!listaSpa.isEmpty()) {
+					
+					 int destinoAleatorio = (int)Math.floor(Math.random()*(listaSpa.size()-1-0+1)+0);
+					
+					 destinoFinal=		listaSpa.get(destinoAleatorio);
+					 
+					 System.out.println(destinoFinal);
+				
+				
+				}
+				
+
+				if(destinoFinal.equals("Carratraca")) {
+					
+					
+					imagenDestino=new ImageIcon("./iconos/Cuidados/spaCarratracaG.jpg");
+					
+				}
+				if(destinoFinal.equals("Benahavis")) {
+					
+					imagenDestino=new ImageIcon("./iconos/Cuidados/spaBenahavisG.jpg");
+					
+				}
+				if(destinoFinal.equals("Hammam")) {
+					
+					imagenDestino=new ImageIcon("./iconos/Cuidados/HammamG.jpg");
+					
+				}
+				
+				ventana.irAPantalla("destinoFinal",destinoFinal,imagenDestino);
+				
+				
+				
+				
+				
+				
+			}
+		});
+		botonSorteo.setFont(new Font("Roboto Black", Font.BOLD, 15));
+		botonSorteo.setBounds(205, 0, 122, 35);
+		add(botonSorteo);
+		
 		JLabel labelFondo = new JLabel("New label");
 		labelFondo.setIcon(new ImageIcon(PantallaSpa.class.getResource("/imagenes/fondoLogin1.jpg")));
 		labelFondo.setBounds(0, 0, 800, 500);
@@ -55,5 +182,4 @@ public class PantallaSpa extends JPanel {
 		
 		
 	}
-
 }

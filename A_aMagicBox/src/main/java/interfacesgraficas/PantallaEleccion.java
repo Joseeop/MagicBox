@@ -130,8 +130,8 @@ public class PantallaEleccion extends JPanel {
 		labelIconoCuidado.setBounds(53, 171, 95, 82);
 		add(labelIconoCuidado);
 	
-		MusicaFondo musica= new MusicaFondo(new File("./musica/DARK VALLEY.wav"));
-		musica.start();
+//		MusicaFondo musica= new MusicaFondo(new File("./musica/DARK VALLEY.wav"));
+//		musica.start();
 		
 		JLabel labelFondo = new JLabel("New label");
 		labelFondo.setIcon(new ImageIcon(PantallaEleccion.class.getResource("/imagenes/fondoLogin1.jpg")));

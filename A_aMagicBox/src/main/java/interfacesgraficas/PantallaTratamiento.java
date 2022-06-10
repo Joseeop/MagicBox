@@ -1,26 +1,102 @@
 package interfacesgraficas;
 
 import javax.swing.JPanel;
+
+import componentesvisuales.BotonEleccion;
+
 import javax.swing.JLabel;
 
 import java.awt.Cursor;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 
 public class PantallaTratamiento extends JPanel {
 	
 	private Ventana ventana;
+	private ArrayList<String> listaTratamiento = new ArrayList<String>();
 	
 	public PantallaTratamiento(Ventana v, String ruta) {
 		
 		this.ventana=v;
 		setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("TRATAMIENTO");
-		lblNewLabel.setBounds(220, 174, 121, 64);
-		add(lblNewLabel);
+		JLabel labelRadiofrecuencia = new JLabel("radiofrecuencia");
+		labelRadiofrecuencia.setIcon(new ImageIcon(PantallaTratamiento.class.getResource("/imagenes/radiofrecuencia.jpg")));
+		labelRadiofrecuencia.setBounds(137, 294, 204, 155);
+		add(labelRadiofrecuencia);
+		
+		JLabel labellifting = new JLabel("LIFTING");
+		labellifting.setIcon(new ImageIcon(PantallaTratamiento.class.getResource("/imagenes/lifting.jpg")));
+		labellifting.setBounds(243, 102, 204, 155);
+		add(labellifting);
+		
+		JLabel labelPeeling = new JLabel("peeling");
+		labelPeeling.setIcon(new ImageIcon(PantallaTratamiento.class.getResource("/imagenes/peeling.jpg")));
+		labelPeeling.setBounds(20, 102, 204, 155);
+		add(labelPeeling);
+		/**
+		 * Botón 1
+		 */
+		BotonEleccion botonLifting;
+		botonLifting = new BotonEleccion("lifting");
+		botonLifting.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+					
+						if(!listaTratamiento.contains("lifting")) {
+							listaTratamiento.add("lifting");
+						}else {
+							listaTratamiento.remove("lifting");
+						}
+			
+			}
+		});
+		botonLifting.setText("lifting");
+		botonLifting.setBounds(271, 260, 160, 23);
+		add(botonLifting);
+		
+		/**
+		 * Botón 2
+		 */
+		BotonEleccion botonPeeling = new BotonEleccion("peeling");
+		botonPeeling.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+					
+						if(!listaTratamiento.contains("peeling")) {
+							listaTratamiento.add("peeling");
+						}else {
+							listaTratamiento.remove("peeling");
+						}
+			
+			}
+		});
+		botonPeeling.setText("peeling");
+		botonPeeling.setBounds(43, 260, 160, 23);
+		add(botonPeeling);
+		/**
+		 * Botón 3
+		 */
+		BotonEleccion botonRadiofrecuencia = new BotonEleccion("radiofrecuencia");
+		botonRadiofrecuencia.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+					
+						if(!listaTratamiento.contains("radiofrecuencia")) {
+							listaTratamiento.add("radiofrecuencia");
+						}else {
+							listaTratamiento.remove("radiofrecuencia");
+						}
+			
+			}
+		});
+		botonRadiofrecuencia.setText("radiofrecuencia");
+		botonRadiofrecuencia.setBounds(159, 451, 160, 23);
+		add(botonRadiofrecuencia);
 		
 	
 		JLabel labelImagenCuidado = new JLabel("New label");
@@ -46,6 +122,54 @@ public class PantallaTratamiento extends JPanel {
 		labelVolver.setIcon(new ImageIcon(PantallaUsuario.class.getResource("/imagenes/iconoVentanaInicio.png")));
 		labelVolver.setBounds(0, 0, 60, 53);
 		add(labelVolver);
+		
+		JButton botonSorteo = new BotonEleccion("SORTEO");
+		botonSorteo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String destinoFinal="";
+				ImageIcon imagenDestino = null;
+				if(!listaTratamiento.isEmpty()) {
+					
+					 int destinoAleatorio = (int)Math.floor(Math.random()*(listaTratamiento.size()-1-0+1)+0);
+					
+					 destinoFinal=		listaTratamiento.get(destinoAleatorio);
+					 
+					 System.out.println(destinoFinal);
+				
+				
+				}
+				
+
+				if(destinoFinal.equals("peeling")) {
+					
+					
+					imagenDestino=new ImageIcon("./iconos/Cuidados/peeling.jpg");
+					
+				}
+				if(destinoFinal.equals("radiofrecuencia")) {
+					
+					imagenDestino=new ImageIcon("./iconos/Cuidados/radiofrecuencia.jpg");
+					
+				}
+				if(destinoFinal.equals("lifting")) {
+					
+					imagenDestino=new ImageIcon("./iconos/Cuidados/lifting.jpg");
+					
+				}
+
+				
+				ventana.irAPantalla("destinoFinal",destinoFinal,imagenDestino);
+				
+				//destinofinal pantalla (destinoFinal,imagenDestino)
+				
+				
+				
+				
+			}
+		});
+		botonSorteo.setFont(new Font("Roboto Black", Font.BOLD, 15));
+		botonSorteo.setBounds(205, 0, 122, 35);
+		add(botonSorteo);
 		
 		JLabel labelFondo = new JLabel("New label");
 		labelFondo.setIcon(new ImageIcon(PantallaTratamiento.class.getResource("/imagenes/fondoLogin1.jpg")));

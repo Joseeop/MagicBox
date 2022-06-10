@@ -64,7 +64,9 @@ public class PantallaDestino extends JPanel {
 		labelImagenDestino.setIcon(new ImageIcon(PantallaDestino.class.getResource("/imagenes/viajar.png")));
 		labelImagenDestino.setBounds(508, 0, 292, 500);
 		add(labelImagenDestino);
-		
+		/**
+		 * label con evento que nos vuelve a la pantalla selección.
+		 */
 		JLabel labelVolver = new JLabel("New label");
 		labelVolver.addMouseListener(new MouseAdapter() {
 			@Override

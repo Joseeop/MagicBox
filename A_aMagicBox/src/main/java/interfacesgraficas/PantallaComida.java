@@ -59,6 +59,13 @@ public class PantallaComida extends JPanel {
 		add(lblNewLabel);
 
 		final JComboBox seleccionComida = new JComboBox();
+		seleccionComida.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				MusicaFondo musica= new MusicaFondo(new File("./musica/combosound.wav"));
+				musica.start();
+			}
+		});
 		seleccionComida.setBounds(191, 130, 182, 20);
 		add(seleccionComida);
 		seleccionComida.setModel(new DefaultComboBoxModel(TipoComida.values()));
@@ -137,7 +144,9 @@ public class PantallaComida extends JPanel {
 		});
 		botonAdelante.setBounds(162, 261, 168, 23);
 		add(botonAdelante);
-
+		/**
+		 * label con evento que nos vuelve a la pantalla selección
+		 */
 		JLabel labelVolver = new JLabel("New label");
 		labelVolver.addMouseListener(new MouseAdapter() {
 			@Override

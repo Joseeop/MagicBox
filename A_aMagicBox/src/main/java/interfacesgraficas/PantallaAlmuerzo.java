@@ -4,8 +4,10 @@ import javax.swing.JPanel;
 
 import clases.Comidas;
 import componentesvisuales.BotonEleccion;
+import excepciones.OpcionesMaximasException;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 import java.awt.Cursor;
 import java.awt.Font;
@@ -13,8 +15,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 import java.util.ArrayList;
 
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
@@ -42,10 +46,15 @@ public class PantallaAlmuerzo extends JPanel {
 					
 						if(!listaAlmuerzo.contains("Tercer Acto")) {
 							listaAlmuerzo.add("Tercer Acto");
+						}else {
+							listaAlmuerzo.remove("Tercer Acto");
 						}
 			
 			}
 		});
+		
+
+		
 		botonTercerActo.setText("Tercer Acto");
 		botonTercerActo.setBounds(62, 401, 160, 23);
 		add(botonTercerActo);
@@ -56,6 +65,8 @@ public class PantallaAlmuerzo extends JPanel {
 					
 						if(!listaAlmuerzo.contains("Refectorium")) {
 							listaAlmuerzo.add("Refectorium");
+						}else {
+							listaAlmuerzo.remove("Refectorium");
 						}
 			
 			}
@@ -70,6 +81,8 @@ public class PantallaAlmuerzo extends JPanel {
 					
 						if(!listaAlmuerzo.contains("Soca")) {
 							listaAlmuerzo.add("Soca");
+						}else {
+							listaAlmuerzo.remove("Soca");
 						}
 			
 			}
@@ -79,17 +92,28 @@ public class PantallaAlmuerzo extends JPanel {
 		add(botonSoca);
 		
 		
-		JButton botonOleo = new BotonEleccion("Oleo");
+		final JButton botonOleo = new BotonEleccion("Oleo");
 		botonOleo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 					
 						if(!listaAlmuerzo.contains("Oleo")) {
 							listaAlmuerzo.add("Oleo");
+						}else {
+							listaAlmuerzo.remove("Oleo");
+						}
+						if(listaAlmuerzo.size()>3) {
+							botonOleo.setSelected(false);
 						}
 			
 			}
 		});
 		botonOleo.setBounds(62, 205, 160, 23);
+		ButtonGroup grupo =new ButtonGroup();
+		grupo.add(botonOleo);
+		grupo.add(botonSoca);
+		grupo.add(botonRefectorium);
+		grupo.add(botonOleo);
+		
 		add(botonOleo);
 
 		/**
@@ -180,7 +204,7 @@ public class PantallaAlmuerzo extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				String destinoFinal="";
 				ImageIcon imagenDestino = null;
-				if(!listaAlmuerzo.isEmpty()) {
+				if(!listaAlmuerzo.isEmpty()/*&&listaAlmuerzo.size()<4*/) {
 					
 					 int destinoAleatorio = (int)Math.floor(Math.random()*(listaAlmuerzo.size()-1-0+1)+0);
 					
@@ -210,23 +234,35 @@ public class PantallaAlmuerzo extends JPanel {
 				}
 				if(destinoFinal.equals("Tercer Acto")) {
 					
-					imagenDestino=new ImageIcon("./iconos/Restaurantes/Tercer_Acto.jpeg");
-					
+					imagenDestino=new ImageIcon("./iconos/Restaurantes/Tercer_Acto.jpeg");		
 				}
-
+				
+			
 				
 				ventana.irAPantalla("destinoFinal",destinoFinal,imagenDestino);
 				
-				//destinofinal pantalla (destinoFinal,imagenDestino)
 				
-				
-				
-				
+			
 			}
 		});
+		
 		botonSorteo.setFont(new Font("Roboto Black", Font.BOLD, 15));
 		botonSorteo.setBounds(209, 435, 122, 35);
 		add(botonSorteo);
+		
+		final MusicaFondo musica= new MusicaFondo(new File("./musica/miGranNoche.wav"));
+		musica.start();
+		
+		JLabel botonMute = new JLabel("New label");
+		botonMute.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				//Parar música
+			}
+		});
+		botonMute.setIcon(new ImageIcon(PantallaAlmuerzo.class.getResource("/imagenes/mute.png")));
+		botonMute.setBounds(415, 11, 60, 53);
+		add(botonMute);
 		
 		JLabel labelFondo = new JLabel("New label");
 		labelFondo.setIcon(new ImageIcon(PantallaAlmuerzo.class.getResource("/imagenes/fondoLogin1.jpg")));

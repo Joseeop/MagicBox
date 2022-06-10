@@ -45,6 +45,16 @@ public class PantallaCuidado extends JPanel {
 		add(labelImagenCuidado);
 		
 		final JComboBox seleccionCuidado = new JComboBox();
+		seleccionCuidado.addMouseListener(new MouseAdapter() {
+			/**
+			 * Mediante un evento de click de ratón le añadimos un sonido.
+			 */
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				MusicaFondo musica= new MusicaFondo(new File("./musica/combosound.wav"));
+				musica.start();
+			}
+		});
 		seleccionCuidado.setModel(new DefaultComboBoxModel(TipoCuidado.values()));
 		seleccionCuidado.setBounds(238, 192, 107, 22);
 		add(seleccionCuidado);
@@ -84,6 +94,9 @@ public class PantallaCuidado extends JPanel {
 				
 			}
 		});
+		/**
+		 * label con evento que nos vuelve a la pantalla selección
+		 */
 		JLabel labelVolver = new JLabel("New label");
 		labelVolver.addMouseListener(new MouseAdapter() {
 			@Override
@@ -107,6 +120,11 @@ public class PantallaCuidado extends JPanel {
 		 */
 		JButton botonAdelante = new BotonRegistro("¡ADELANTE!");
 		botonAdelante.addMouseListener(new MouseAdapter() {
+			/**
+			 * Evento para el botón adelante en el que comprobamos cual ha sido la elección en el combobox
+			 * según la elección iremos a una ventana u otra.
+			 * @param e
+			 */
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				final String eleccion=seleccionCuidado.getSelectedItem().toString();
@@ -127,6 +145,9 @@ public class PantallaCuidado extends JPanel {
 		botonAdelante.setBounds(162, 261, 168, 23);
 		add(botonAdelante);
 		
+		/**
+		 * Label en el que ponemos la imagen de fondo de la pantalla
+		 */
 		JLabel labelFondo = new JLabel("New label");
 		labelFondo.setIcon(new ImageIcon(PantallaCuidado.class.getResource("/imagenes/fondoLogin1.jpg")));
 		labelFondo.setBounds(0, 0, 800, 500);
