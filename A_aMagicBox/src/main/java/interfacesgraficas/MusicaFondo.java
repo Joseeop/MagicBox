@@ -1,8 +1,8 @@
 package interfacesgraficas;
 
 	// Cargar un clip de audio y reproducirlo.
-	
-	
+
+	 
 	
 import java.io.File;
 import java.io.IOException;
@@ -13,7 +13,12 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
-	
+	/**
+	 * Clase Musica Fondo a la que llamaremos para reproducir música tanto en nuestras pantallas como en 
+	 * algunos efectos de click en los botones.
+	 * @author Spanys
+	 *
+	 */
 	public class MusicaFondo extends Thread{
 		
 		private File musica;

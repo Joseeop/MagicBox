@@ -58,7 +58,7 @@ public class PantallaTratamiento extends JPanel {
 			}
 		});
 		botonLifting.setText("lifting");
-		botonLifting.setBounds(269, 250, 160, 23);
+		botonLifting.setBounds(271, 238, 160, 23);
 		add(botonLifting);
 		
 		/**
@@ -77,7 +77,7 @@ public class PantallaTratamiento extends JPanel {
 			}
 		});
 		botonPeeling.setText("peeling");
-		botonPeeling.setBounds(45, 250, 160, 23);
+		botonPeeling.setBounds(50, 238, 160, 23);
 		add(botonPeeling);
 		/**
 		 * Botón 3

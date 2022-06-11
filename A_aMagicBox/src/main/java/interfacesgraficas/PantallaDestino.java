@@ -2,11 +2,13 @@ package interfacesgraficas;
 
 import javax.swing.JPanel;
 
+import clases.Destinos;
 import componentesvisuales.BotonEleccion;
 import componentesvisuales.BotonLogin;
 
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 
 import java.awt.Cursor;
@@ -163,10 +165,13 @@ public class PantallaDestino extends JPanel {
 		botonLondres.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 					
-						if(!listaPaises.contains("Londres")) {
+						if(!listaPaises.contains("Londres")||listaPaises.size()<5) {
 							listaPaises.add("Londres");
+							//QUITAR
+						}else if (listaPaises.size()>=5){
+							JOptionPane.showMessageDialog(ventana,"jkhbohb","Error",JOptionPane.ERROR_MESSAGE);
 						}
-			//Cambiar el color.
+			
 			}
 		});
 		botonLondres.setBounds(82, 259, 160, 23);
@@ -276,7 +281,9 @@ public class PantallaDestino extends JPanel {
 					
 				}
 				
+				
 				ventana.irAPantalla("destinoFinal",destinoFinal,imagenDestino);
+			
 				
 				//destinofinal pantalla (destinoFinal,imagenDestino)
 				

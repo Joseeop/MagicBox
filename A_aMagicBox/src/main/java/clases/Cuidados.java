@@ -13,6 +13,20 @@ public class Cuidados extends Actividad{
 	
 		this.tipoCuidado=tipoCuidado;
 	}
+	
+	
+
+	public TipoCuidado getTipoCuidado() {
+		return tipoCuidado;
+	}
+
+
+
+	public void setTipoCuidado(TipoCuidado tipoCuidado) {
+		this.tipoCuidado = tipoCuidado;
+	}
+
+
 
 	@Override
 	public String toString() {

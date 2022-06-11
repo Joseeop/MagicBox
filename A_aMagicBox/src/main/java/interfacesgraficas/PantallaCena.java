@@ -18,6 +18,13 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+/**
+ *  * Pantalla en la que seleccionaremos nuestras opciones preferidas para cenes, se hará 
+ * un sorteo entre nuestros seleccionados y posteriormente se lo pasaremos mediante parámetros 
+ * a PantallaDestinoFinal
+ * @author José Oña
+ *
+ */
 public class PantallaCena extends JPanel {
 	
 	private Ventana ventana;

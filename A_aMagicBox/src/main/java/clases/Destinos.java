@@ -29,15 +29,7 @@ public String toString() {
 
 
 
-//
-//	public void setUbicacion(String ubicacion) {
-//		//Persistir
-//		this.ubicacion = ubicacion;
-//	}
-//	
-//	//hacer sobreescritura al setFoto, setDescripcion de Actividad, haciendo también persistencia aqui
-//	//hacer también overrride al setNombre de ElementoConNombre para que también persista si cambia el nombre
-//	//Hacer la mismo en lacase Comida y la clase Cuidado
+
 
 	
 	

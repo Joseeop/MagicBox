@@ -12,7 +12,7 @@ public SeleccionViaje(String nombre, ArrayList<Destinos> destino) {
 	this.destino = destino;
 }
 
-public ArrayList<Destinos> getDestino() {
+public  ArrayList<Destinos> getDestino() {
 	return destino;
 }
 
