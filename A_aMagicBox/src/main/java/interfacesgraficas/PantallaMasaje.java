@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
@@ -185,6 +186,8 @@ public class PantallaMasaje extends JPanel {
 		botonSorteo.setFont(new Font("Roboto Black", Font.BOLD, 15));
 		botonSorteo.setBounds(205, 0, 122, 35);
 		add(botonSorteo);
+		
+	
 		
 		JLabel labelFondo = new JLabel("New label");
 		labelFondo.setIcon(new ImageIcon(PantallaMasaje.class.getResource("/imagenes/fondoLogin1.jpg")));

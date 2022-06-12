@@ -2,8 +2,16 @@ package clases;
 
 import java.sql.SQLException;
 
+/**
+ * Superclase de la que heredarán las clases que necesiten un nombre para la creación del objeto.
+ * @author José Oña Pineda
+ *
+ */
 public abstract class ElementoConNombre {
 
+		/**
+		 * variable interna tipo String que determinará el nombre.
+		 */
 	private String nombre;
 
 	public ElementoConNombre(String nombre) {

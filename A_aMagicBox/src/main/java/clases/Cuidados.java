@@ -5,7 +5,15 @@ import java.awt.image.BufferedImage;
 import enumeraciones.TipoComida;
 import enumeraciones.TipoCuidado;
 
+/**
+ * clase que hereda de actividad.
+ * @author José Oña Pineda
+ *
+ */
 public class Cuidados extends Actividad{
+	/**
+	 * variable interna para determinar el tipo de cuidado, predefinidos en un Enum.
+	 */
 	private TipoCuidado tipoCuidado;
 	
 	public Cuidados(String nombre, String foto, String descripcion,TipoCuidado tipoCuidado) {

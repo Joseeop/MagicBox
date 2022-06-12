@@ -21,6 +21,7 @@ import enumeraciones.TipoCuidado;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 import java.util.ArrayList;
 import java.awt.Font;
 import java.awt.event.ActionListener;
@@ -266,7 +267,7 @@ public class PantallaDestino extends JPanel {
 				}
 				if(destinoFinal.equals("Londres")) {
 					
-					imagenDestino=new ImageIcon("./iconos/Destinos/viena.jpg");
+					imagenDestino=new ImageIcon("./iconos/Destinos/londres.jpg");
 					
 				}
 				if(destinoFinal.equals("Copenhague")) {
@@ -299,6 +300,8 @@ public class PantallaDestino extends JPanel {
 		botonSorteo.setFont(new Font("Roboto Black", Font.BOLD, 15));
 		botonSorteo.setBounds(205, 0, 122, 35);
 		add(botonSorteo);
+		
+	
 		
 		JLabel labelFondo = new JLabel("FONDO");
 		labelFondo.setIcon(new ImageIcon(PantallaDestino.class.getResource("/imagenes/fondoLogin1.jpg")));

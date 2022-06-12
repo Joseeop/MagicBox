@@ -267,19 +267,8 @@ public class PantallaAlmuerzo extends JPanel {
 		botonSorteo.setBounds(209, 435, 122, 35);
 		add(botonSorteo);
 		
-		final MusicaFondo musica= new MusicaFondo(new File("./musica/miGranNoche.wav"));
-		musica.start();
 		
-		JLabel botonMute = new JLabel("New label");
-		botonMute.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				//Parar música
-			}
-		});
-		botonMute.setIcon(new ImageIcon(PantallaAlmuerzo.class.getResource("/imagenes/mute.png")));
-		botonMute.setBounds(415, 11, 60, 53);
-		add(botonMute);
+		
 		
 		JLabel labelFondo = new JLabel("New label");
 		labelFondo.setIcon(new ImageIcon(PantallaAlmuerzo.class.getResource("/imagenes/fondoLogin1.jpg")));

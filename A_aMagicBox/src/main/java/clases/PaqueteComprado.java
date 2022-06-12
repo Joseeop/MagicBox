@@ -1,11 +1,20 @@
 package clases;
 
 import java.time.LocalDateTime;
-
+/**
+ * clase que hereda de Compra cuya funcionalidad es almacenar el paquete comprado.
+ * @author José Oña Pineda
+ *
+ */
 public final class PaqueteComprado extends Compra{
 	
-
+/**
+ * variable interta tipo paquete
+ */
 	private Paquetes paquete;
+	/**
+	 * variable interna tipo actividad, donde se define la actividad elegida.
+	 */
 	private Actividad actividadElegida;
 	
 	

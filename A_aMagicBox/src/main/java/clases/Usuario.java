@@ -17,9 +17,17 @@ import excepciones.UsuarioNoExisteException;
 import utils.ConexionBD;
 
 public class Usuario extends ElementoConNombre {
-	
+	/**
+	 * variable email para el usuario
+	 */
 	private String email;
+	/**
+	 * variable tipo string para el nombre de usuario
+	 */
 	private String nombreUsuario;
+	/**
+	 * 
+	 */
 	private String apellido;
 	private String pass;
 	private Pais pais;

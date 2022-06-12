@@ -2,9 +2,16 @@ package clases;
 
 import java.util.ArrayList;
 
+/**
+ * Clase que hereda de ElementoCoNombre y encargada de almacenar la lista de cuidados
+ * @author José Oña Pineda
+ *
+ */
 public class SeleccionCuidado extends ElementoConNombre{
 
-
+	/**
+	 * Variable de tipo arraylist encargada de almacenar la lista de cuidados.
+	 */
 	private ArrayList<Cuidados>cuidado;
 
 	public SeleccionCuidado(String nombre, ArrayList<Cuidados> cuidado) {

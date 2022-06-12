@@ -2,6 +2,7 @@ package interfacesgraficas;
 
 import java.awt.Cursor;
 import java.awt.Image;
+import java.io.File;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -29,6 +30,7 @@ public class Ventana extends JFrame{
 	 */
 	protected Usuario usuarioLogado;
 	protected Comidas restaurante;
+	
 	/**
 	 * Constructor de Ventana, que inicializa su tamaño título e icono, y otras propiedades.
 	 * en ella también vamos a incluir argumentos de programa para que el usuario loguee de forma directa.
@@ -43,7 +45,8 @@ public class Ventana extends JFrame{
 		//Pantalla completa las dos lineas siguentes
 		//this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		//this.setUndecorated(true);
-		
+		final MusicaFondo musica= new MusicaFondo(new File("./musica/miGranNoche.wav"));
+		musica.start();
 		this.setTitle("MAGIC BOX");
 		this.setIconImage(new ImageIcon("./iconos/iconoVentana.png").getImage());
 		this.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));

@@ -2,9 +2,16 @@ package clases;
 
 import java.awt.image.BufferedImage;
 
+/**
+ * Clase que hereda de Actividad. Cuya función es definir el destino elegido.
+ * @author José Oña Pineda
+ *
+ */
 public class Destinos extends Actividad {
 	
-
+/**
+ * variable interna tipo String para definir la ubicación del destino (redundante).
+ */
 private String ubicacion;
 
 public Destinos(String nombre, String foto, String descripcion, String ubicacion) {
