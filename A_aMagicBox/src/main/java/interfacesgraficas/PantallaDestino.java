@@ -26,7 +26,12 @@ import java.util.ArrayList;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+/**
+ * clase que hereda de JPanel, cuya función es mostrar al usuario las posibilidades que tiene antes de realizar el sorteo
+ * y conocer su destino final
+ * @author José Oña Pineda
+ *
+ */
 public class PantallaDestino extends JPanel {
 	
 	/**

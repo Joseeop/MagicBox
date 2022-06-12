@@ -30,7 +30,11 @@ import javax.swing.JSeparator;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseMotionAdapter;
-
+/**
+ * Clase que hereda de JPanel, en la cual el usuario podrá loguearse a la aplicación.
+ * @author José Oña Pineda
+ *
+ */
 public class PantallaLogin extends JPanel{
 	private Ventana ventana;
 	/**

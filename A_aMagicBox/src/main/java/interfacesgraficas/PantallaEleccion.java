@@ -27,7 +27,11 @@ import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
-
+/**
+ * Clase que hereda de JPanel, es una pantalla en la que el usario elegirá qué tipo de experiencia quiere disfrutar.
+ * @author José Oña Pineda
+ *
+ */
 public class PantallaEleccion extends JPanel {
 	
 	private Ventana ventana;
@@ -134,8 +138,7 @@ public class PantallaEleccion extends JPanel {
 		labelIconoCuidado.setBounds(53, 171, 95, 82);
 		add(labelIconoCuidado);
 	
-//		MusicaFondo musica= new MusicaFondo(new File("./musica/DARK VALLEY.wav"));
-//		musica.start();
+
 		
 		JLabel labelFondo = new JLabel("New label");
 		labelFondo.setIcon(new ImageIcon(PantallaEleccion.class.getResource("/imagenes/fondoLogin1.jpg")));
@@ -146,26 +149,5 @@ public class PantallaEleccion extends JPanel {
 
 	}
 }
-/*try {
 
-// Se obtiene un Clip de sonido
-Clip sonido = AudioSystem.getClip();
-
-// Se carga con un fichero wav
-sonido.open(AudioSystem.getAudioInputStream(new File("./musica/DARK VALLEY.wav")));
-
-// Comienza la reproducción
-sonido.start();
-
-// Espera mientras se esté reproduciendo.
-while (sonido.isRunning())
-    Thread.sleep(1000);
-
-// Se cierra el clip.
-sonido.close();
-} catch (Exception e) {
-System.out.println("" + e);
-}
-
-*/	
 

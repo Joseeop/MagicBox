@@ -15,14 +15,18 @@ import excepciones.ContrasegnaIncorrectaException;
 import excepciones.ContrasegnaIncorrectaException;
 import excepciones.UsuarioNoExisteException;
 import utils.ConexionBD;
-
+/**
+ * Clase que extiende de ElementoConNombre, y cuya funcionalidad es hacer consultas y almacenar los datos del usuario.
+ * @author Spanys
+ *
+ */
 public class Usuario extends ElementoConNombre {
 	/**
 	 * variable email para el usuario
 	 */
 	private String email;
 	/**
-	 * variable tipo string para el nombre de usuario
+	 * variable tipo string para el nombre de usuario 
 	 */
 	private String nombreUsuario;
 	/**

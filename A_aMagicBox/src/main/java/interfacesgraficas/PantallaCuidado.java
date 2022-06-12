@@ -30,7 +30,12 @@ import java.sql.Statement;
 
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
-
+/**
+ * clase que hereda de JPanel, cuya función es mostrar al usuario las posibilidades que tiene antes de realizar el sorteo
+ * y conocer su destino final
+ * @author José Oña Pineda
+ *
+ */
 public class PantallaCuidado extends JPanel {
 	
 	private Ventana ventana;

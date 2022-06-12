@@ -25,7 +25,7 @@ import javax.swing.JButton;
  * Pantalla en la que seleccionaremos nuestras opciones preferidas para almuerzos, se hará 
  * un sorteo entre nuestros seleccionados y posteriormente se lo pasaremos mediante parámetros 
  * a PantallaDestinoFinal
- * @author Spanys
+ * @author José Oña Pineda
  *
  */
 public class PantallaAlmuerzo extends JPanel {

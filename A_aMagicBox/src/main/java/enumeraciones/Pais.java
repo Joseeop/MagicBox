@@ -1,5 +1,9 @@
 package enumeraciones;
-
+/**
+ * Enums para elegir país a la hora de registrarse en la aplicación.
+ * @author José Oña Pineda
+ *
+ */
 public enum Pais {
 	AFGANISTÁN, ALBANIA, ALEMANIA, ANDORRA, ANGOLA, ARABIA, 
 	ARGELIA, ARGENTINA, ARMENIA, AUSTRALIA, AUSTRIA, AZERBAIYÁN, BAHAMAS, BANGLADÉS, BARBADOS, BARÉIN, 

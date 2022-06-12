@@ -18,6 +18,12 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+/**
+ * clase que hereda de JPanel, cuya función es mostrar al usuario las posibilidades que tiene antes de realizar el sorteo
+ * y conocer su destino final
+ * @author José Oña Pineda
+ *
+ */
 public class PantallaSpa extends JPanel {
 	
 	private Ventana ventana;
