@@ -20,8 +20,15 @@ import javax.swing.JButton;
 public class PantallaTratamiento extends JPanel {
 	
 	private Ventana ventana;
+	/**
+	 * ArrayList donde iremos ingresando los tratamientos según las preferencias del usuario y cuando los vaya seleccionando.
+	 */
 	private ArrayList<String> listaTratamiento = new ArrayList<String>();
 	
+	/**
+	 * Constructor de clase ventana que recibe por parámetros las propiedades heredadas en la que incluimos la funcionalidad de la misma
+	 * @param Ventana que recibe y construye por argumentos
+	 */
 	public PantallaTratamiento(Ventana v, String ruta) {
 		
 		this.ventana=v;

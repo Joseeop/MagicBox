@@ -15,12 +15,23 @@ import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 
+/**
+ * Clase que hereda de JPanel en ella mostraremos información acerca del funcionamiento de la aplicación.
+ * Para ello usaremos lectura de ficheros de un fichero.txt que se encuentra en la carpeta del proyecto.
+ * @author José Oña Pineda
+ *
+ */
 public class PantallaInformacion extends JPanel {
+	
 	
 	private Ventana ventana;
 	private JTextField textField;
 	
-	//HACER AQUI LECTURA DE FICHEROS.
+
+	/**
+	 * Constructor de clase ventana que recibe por parámetros las propiedades heredadas en la que incluimos la funcionalidad de la misma
+	 * @param Ventana que recibe y construye por argumentos
+	 */
 	
 	public PantallaInformacion (Ventana v) {
 		
@@ -28,7 +39,7 @@ public class PantallaInformacion extends JPanel {
 		setLayout(null);
 		File file=new File("./informacion.txt");
 		BufferedReader lector;
-		String texto="\n";
+		String texto="";
 		try {
 			lector = new BufferedReader(new FileReader(file.getPath()));
 			   String linea = lector.readLine();
@@ -36,7 +47,6 @@ public class PantallaInformacion extends JPanel {
 		        
 		        while(linea!=null) {
 		        	texto+=linea+"\n";
-		        	System.out.println("\n");
 		        	linea=lector.readLine();
 		        }
 		        

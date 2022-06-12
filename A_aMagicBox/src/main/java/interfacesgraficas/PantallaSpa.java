@@ -21,10 +21,16 @@ public class PantallaSpa extends JPanel {
 	
 	private Ventana ventana;
 	
+	/**
+	 * ArrayList donde iremos ingresando las preferencias del usuario según los seleccione.
+	 */
 	private ArrayList<String> listaSpa = new ArrayList<String>();
-	private BotonEleccion botonTercerActo2;
 	
 	
+	/**
+	 * Constructor de clase ventana que recibe por parámetros las propiedades heredadas en la que incluimos la funcionalidad de la misma
+	 * @param Ventana que recibe y construye por argumentos
+	 */
 	public PantallaSpa (Ventana v, String ruta) {
 		this.ventana=v;
 		setLayout(null);

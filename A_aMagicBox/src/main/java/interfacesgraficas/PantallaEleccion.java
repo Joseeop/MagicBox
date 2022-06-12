@@ -31,7 +31,11 @@ import javax.swing.ImageIcon;
 public class PantallaEleccion extends JPanel {
 	
 	private Ventana ventana;
-	
+
+	/**
+	 * Constructor de clase ventana que recibe por parámetros las propiedades heredadas en la que incluimos la funcionalidad de la misma
+	 * @param Ventana que recibe y construye por argumentos
+	 */	
 	
 	public PantallaEleccion(Ventana v) {
 		this.ventana=v;

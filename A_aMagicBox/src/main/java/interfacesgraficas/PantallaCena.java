@@ -19,7 +19,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 /**
- *  * Pantalla en la que seleccionaremos nuestras opciones preferidas para cenes, se hará 
+ * Pantalla en la que seleccionaremos nuestras opciones preferidas para cenes, se hará 
  * un sorteo entre nuestros seleccionados y posteriormente se lo pasaremos mediante parámetros 
  * a PantallaDestinoFinal
  * @author José Oña
@@ -33,6 +33,11 @@ public class PantallaCena extends JPanel {
 	 */
 	private ArrayList<String> listaCena = new ArrayList<String>();
 	
+
+	/**
+	 * Constructor de clase ventana que recibe por parámetros las propiedades heredadas en la que incluimos la funcionalidad de la misma
+	 * @param Ventana que recibe y construye por argumentos la ventana y la ruta.
+	 */
 	public PantallaCena(Ventana v, String ruta) {
 		this.ventana=v;
 		setLayout(null);
@@ -139,6 +144,10 @@ public class PantallaCena extends JPanel {
 		lblNewLabel_4.setIcon(new ImageIcon(PantallaCena.class.getResource("/imagenes/dinning-table.png")));
 		lblNewLabel_4.setBounds(516, 0, 284, 500);
 		add(lblNewLabel_4);
+		
+		/**
+		 * Label que nos hará navegar a la pantalla selección.
+		 */
 		JLabel labelVolver = new JLabel("New label");
 		labelVolver.addMouseListener(new MouseAdapter() {
 			@Override

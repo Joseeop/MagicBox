@@ -8,11 +8,18 @@ import java.awt.event.MouseEvent;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.Cursor;
-
+/**
+ * Clase que nos mostrará los datos del usuario que actualmente está logueado en el programa.
+ * @author Spanys
+ *
+ */
 public class PantallaUsuario extends JPanel{
 	
 	private Ventana ventana;
-	
+	/**
+	 * Constructor de clase ventana que recibe por parámetros las propiedades heredadas en la que incluimos la funcionalidad de la misma
+	 * @param Ventana que recibe y construye por argumentos
+	 */
 	public PantallaUsuario(Ventana v) {
 		this.ventana=v;
 		setLayout(null);

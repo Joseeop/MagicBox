@@ -37,12 +37,32 @@ import javax.swing.JSeparator;
 
 public class PantallaRegistro extends JPanel{
 	private Ventana ventana;
+	/**
+	 * Variable interna para ingresar el usuario
+	 */
 	private JTextField campoUsuario;
+	/**
+	 * Variable interna para que el usuario defina su contraseña
+	 */
 	private JPasswordField campoContraseña;
+	/**
+	 * Variable interna para que el usuario defina su email
+	 */
 	private JTextField campoEmail;
+	/**
+	 * Variable interna para que el usuario defina su apellido
+	 */
 	private JTextField campoApellido;
+	/**
+	 * Variable interna para que el usuario defina su nombre
+	 */
 	private JTextField campoNombre;
 	
+
+	/**
+	 * Constructor de clase ventana que recibe por parámetros las propiedades heredadas en la que incluimos la funcionalidad de la misma
+	 * @param Ventana que recibe y construye por argumentos
+	 */
 	public PantallaRegistro(Ventana v) {
 		setBackground(Color.ORANGE);
 		setLayout(null);
@@ -119,7 +139,10 @@ public class PantallaRegistro extends JPanel{
 		add(botonRegistrarse);
 		
 		
-		//Los listener siempre al final del código.
+		/**
+		 * Botoón registrarse que recoge todos los campos antes introducidos por el usuario y crea un objeto Usuario
+		 * con todos estos datos.
+		 */
 		botonRegistrarse.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

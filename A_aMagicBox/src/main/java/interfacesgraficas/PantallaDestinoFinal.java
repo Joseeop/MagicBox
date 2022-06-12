@@ -6,12 +6,22 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Color;
-
+/**
+ * Clase que hereda de JPanel, pantalla que contendrá todos los datos del destino ganador, destino y foto
+ * @author José Oña Pineda
+ *
+ */
 public class PantallaDestinoFinal extends JPanel {
 	
 	private Ventana ventana;
 	
-	
+
+/**
+ * 
+ * @param v ventana que recibe por argumentos.
+ * @param destino string que recibe por argumentos con el nombre del destino ganador.
+ * @param foto ImageIcon que recibe por argumentos con la foto del destino ganador.
+ */
 	public PantallaDestinoFinal (Ventana v, String destino,ImageIcon foto) {
 		this.ventana=v;
 		setLayout(null);

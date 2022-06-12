@@ -39,13 +39,31 @@ import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
 import javax.swing.BoxLayout;
 import java.awt.Color;
-
+/**
+ * Pantalla en la que el usuario decidirá si su elección es almuerzo o cena.
+ * @author José Oña Pineda
+ *
+ */
 public class PantallaComida extends JPanel {
-	private Ventana ventana;
 	
+	/**
+	 * Variable de tipo ventana que nos permitirá navegar entre éstas.
+	 */
+	private Ventana ventana;
+	/**
+	 * Variable tipo string que usaremos más adelante para comparar la elección del usuario
+	 */
 	private String eleccion;
+	/**
+	 * variable tipo comidas para construir objeto de tipo comida.
+	 */
 	public  Comidas comida=null;
 
+
+	/**
+	 * Constructor de clase ventana que recibe por parámetros las propiedades heredadas en la que incluimos la funcionalidad de la misma
+	 * @param Ventana que recibe y construye por argumentos
+	 */
 	public PantallaComida(Ventana v) {
 		this.ventana = v;
 		setLayout(null);
@@ -57,9 +75,14 @@ public class PantallaComida extends JPanel {
 		lblNewLabel.setIcon(new ImageIcon(PantallaComida.class.getResource("/imagenes/dinning-table.png")));
 		lblNewLabel.setBounds(516, 0, 284, 500);
 		add(lblNewLabel);
-
+/**
+ * ComboBox que contiene las posibles elecciones para el usuario.
+ */
 		final JComboBox seleccionComida = new JComboBox();
 		seleccionComida.addMouseListener(new MouseAdapter() {
+			/**
+			 * Música incorporada al hacer click en el comboBox.
+			 */
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				MusicaFondo musica= new MusicaFondo(new File("./musica/combosound.wav"));

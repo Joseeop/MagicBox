@@ -30,12 +30,20 @@ import javax.swing.JButton;
  */
 public class PantallaAlmuerzo extends JPanel {
 	
+	/**
+	 * Variable de tipo ventana que nos permitirá navegar entre éstas.
+	 */
 	private Ventana ventana;
 	/**
 	 * ArrayList que nos alamacerá los almuerzos una vez los vamos agregando a nuestras opciones preferentes.
 	 */
 	private ArrayList<String> listaAlmuerzo = new ArrayList<String>();
 	
+
+	/**
+	 * Constructor de clase ventana que recibe por parámetros las propiedades heredadas en la que incluimos la funcionalidad de la misma
+	 * @param Ventana que recibe y construye por argumentos la ventana y la ruta
+	 */
 	public PantallaAlmuerzo(Ventana v, String ruta) {
 		this.ventana=v;
 		setLayout(null);
@@ -157,6 +165,9 @@ public class PantallaAlmuerzo extends JPanel {
 		add(logoRefectorium);
 		
 		
+		/**
+		 * Label que nos hará navegar a la pantalla selección.
+		 */
 		JLabel labelVolver = new JLabel("New label");
 		labelVolver.addMouseListener(new MouseAdapter() {
 			@Override

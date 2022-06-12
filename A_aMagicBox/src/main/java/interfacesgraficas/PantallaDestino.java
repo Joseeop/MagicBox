@@ -33,7 +33,11 @@ public class PantallaDestino extends JPanel {
 	 */
 	private ArrayList<String> listaPaises = new ArrayList<String>();
 	private Ventana ventana;
-	
+
+	/**
+	 * Constructor de clase ventana que recibe por parámetros las propiedades heredadas en la que incluimos la funcionalidad de la misma
+	 * @param Ventana que recibe y construye por argumentos
+	 */
 	public PantallaDestino (Ventana v) {
 		
 		this.ventana=v;

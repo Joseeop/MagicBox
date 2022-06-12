@@ -33,9 +33,23 @@ import java.awt.event.MouseMotionAdapter;
 
 public class PantallaLogin extends JPanel{
 	private Ventana ventana;
+	/**
+	 * Variable JText para el campo e-mail.
+	 */
 	private JTextField campoEmail;
+	/**
+	 * variable para JPassWordField para el campo contraseña
+	 */
 	private JPasswordField campoContraseña;
+	/**
+	 * variables internas para hacer crear una label y que la pantalla se mueva.
+	 */
 	private int xMouse,yMouse;
+
+	/**
+	 * Constructor de clase ventana que recibe por parámetros las propiedades heredadas en la que incluimos la funcionalidad de la misma
+	 * @param Ventana que recibe y construye por argumentos
+	 */
 	public PantallaLogin(Ventana v) {
 		this.ventana=v;
 		setLayout(null);
@@ -129,6 +143,10 @@ public class PantallaLogin extends JPanel{
 		botonLogin.setFont(new Font("Roboto Black", Font.BOLD, 20));
 		botonLogin.setBounds(34, 263, 113, 44);
 		panelFondo.add(botonLogin);
+		/**
+		 * boton login que comprobará si los datos introducidos son válidos, si lo son te mostrará mensaje emergente de bienvenida
+		 * sino, lanzará una excepción.
+		 */
 		botonLogin.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -217,7 +235,9 @@ public class PantallaLogin extends JPanel{
 		labelMoverVentana.setBounds(34, 0, 766, 33);
 		panelFondo.add(labelMoverVentana);
 		
-
+		/**
+		 * Botón para salir del programa.
+		 */
 		BotonSalir.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -225,7 +245,9 @@ public class PantallaLogin extends JPanel{
 			}
 		});
 		
-		
+		/**
+		 * boton para ir a la pantalla registros.
+		 */
 		botonRegistro.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

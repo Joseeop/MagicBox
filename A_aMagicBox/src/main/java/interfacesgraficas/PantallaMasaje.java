@@ -20,9 +20,16 @@ import javax.swing.JButton;
 public class PantallaMasaje extends JPanel {
 	
 	private Ventana ventana;
-	
+	/**
+	 * arraylist donde ingresaremos las opciones de masajes mientras el usuario los va seleccionando.
+	 */
 	private ArrayList<String> listaMasaje = new ArrayList<String>();
 	
+
+	/**
+	 * Constructor de clase ventana que recibe por parámetros las propiedades heredadas en la que incluimos la funcionalidad de la misma
+	 * @param Ventana que recibe y construye por argumentos
+	 */
 	public PantallaMasaje (Ventana v,String ruta) {
 		this.ventana=v;
 		setLayout(null);
@@ -42,7 +49,7 @@ public class PantallaMasaje extends JPanel {
 		labelGeotermal.setBounds(29, 99, 204, 155);
 		add(labelGeotermal);
 		
-		/**
+		/**Dentro de cada uno de los botones añadimos un evento para ingresarlos en el arraylist si ya no lo están.
 		 * Botón 1
 		 */
 		BotonEleccion botonAcupuntura;

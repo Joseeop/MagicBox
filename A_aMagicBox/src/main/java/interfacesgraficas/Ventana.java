@@ -13,7 +13,11 @@ import javax.swing.JPanel;
 
 import clases.Comidas;
 import clases.Usuario;
-
+/**
+ * Clase que hereda de JFrame y que contendrá las pantallas herederas de JPanel.
+ * @author José Oña Pineda
+ *
+ */
 public class Ventana extends JFrame{
 	/**
 	 * Representa la pantalla actual por la que estoy navegando.
@@ -25,6 +29,10 @@ public class Ventana extends JFrame{
 	 */
 	protected Usuario usuarioLogado;
 	protected Comidas restaurante;
+	/**
+	 * Constructor de Ventana, que inicializa su tamaño título e icono, y otras propiedades.
+	 * en ella también vamos a incluir argumentos de programa para que el usuario loguee de forma directa.
+	 */
 	public Ventana(String[] args) {
 		
 		
@@ -66,7 +74,11 @@ public class Ventana extends JFrame{
 		this.setContentPane(this.pantallaActual);
 		this.setVisible(true);
 	}
-	
+	/**
+	 * Función para navegar entre pantallas, dentro tendremos con switch con distintos case, que serán las que nos mueva entre 
+	 * las pantallas
+	 * @param nombrePantalla argumento que le pasaremos al switch y determinará hacía qué pantalla nos dirigimos.
+	 */
 	public void irAPantalla(String nombrePantalla) {
 		
 	this.pantallaActual.setVisible(false);
@@ -137,9 +149,9 @@ public class Ventana extends JFrame{
 	
 	/**
 	 * Función para ir a la pantalla final del sorteo a la que pasaremos todos los datos de la elección ganadora.
-	 * @param nombrePantalla
-	 * @param destinoFinal
-	 * @param imagenDestino
+	 * @param nombrePantalla argumento que le pasaremos al switch y determinará hacía qué pantalla nos dirigimos.
+	 * @param destinoFinal nombre del destino final tras realizar el sorteo entre las opciones elegidas.
+	 * @param imagenDestino imagen del destino final tras realizar el sorteo entre las opciones elegidas.
 	 */
 	public void irAPantalla(String nombrePantalla,String destinoFinal,ImageIcon imagenDestino) {
 		this.pantallaActual.setVisible(false);

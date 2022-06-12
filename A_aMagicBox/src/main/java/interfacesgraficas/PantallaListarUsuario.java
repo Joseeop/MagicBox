@@ -20,6 +20,11 @@ public class PantallaListarUsuario extends JPanel {
 	
 	private Ventana ventana;
 	
+
+	/**
+	 * Constructor de clase ventana que recibe por parámetros las propiedades heredadas en la que incluimos la funcionalidad de la misma
+	 * @param Ventana que recibe y construye por argumentos
+	 */
 	public PantallaListarUsuario (Ventana v) {
 		this.ventana=v;
 		setLayout(new BorderLayout(0, 0));

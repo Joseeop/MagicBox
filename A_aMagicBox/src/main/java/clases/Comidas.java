@@ -7,11 +7,15 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import enumeraciones.TipoComida;
+import excepciones.RestauranteNoExisteException;
 import excepciones.UsuarioNoExisteException;
 import utils.ConexionBD;
 
 public class Comidas extends Actividad {
 	
+	/**
+	 * variable del enum TipoComida
+	 */
 	private TipoComida tipoComida;
 
 	public Comidas(String nombre, String foto, String descripcion, TipoComida tipoComida) {
@@ -19,8 +23,13 @@ public class Comidas extends Actividad {
 		this.tipoComida = tipoComida;
 	}
 	
-	
-	protected Comidas(String nombre) throws SQLException, UsuarioNoExisteException {
+	/**
+	 * Constructor de clase en el que hacemos una consulta a la BBDD y rescatamos los datos de un restaurante según su nombre.
+	 * @param nombre del restaurante 
+	 * @throws SQLException 
+	 * @throws RestauranteNoExisteException excepción que salta cuando el restaurante no existe en la BBDD
+	 */
+	protected Comidas(String nombre) throws SQLException, RestauranteNoExisteException {
 		
 		super();
 		Statement smt = ConexionBD.conectar();
@@ -38,7 +47,7 @@ public class Comidas extends Actividad {
 			
 		} else {
 			ConexionBD.desconectar();
-			throw new UsuarioNoExisteException("No existe ese restaurante en la BD");
+			throw new RestauranteNoExisteException("No existe ese restaurante en la BD");
 		}
 		ConexionBD.desconectar();
 	}
@@ -47,7 +56,10 @@ public class Comidas extends Actividad {
 		// TODO Auto-generated constructor stub
 	}
 
-
+/**
+ * función de ArrayList para devolver todas las comidas que tenemos alamacenadas en la BBDD mediante una consulta select.
+ * @return resultado de las consultas
+ */
 	public static ArrayList<Comidas>getTodos(){
 		 ArrayList<Comidas> ret=new ArrayList<Comidas>();
 		 
